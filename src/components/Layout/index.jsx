@@ -10,7 +10,7 @@ const Layout = ({children}) => {
     <>
       <aside className={styles.sideMenu}>
         <header className={styles.header}>
-          <Link href="/" className={styles.logo}>
+          <Link href="/movies" className={styles.logo}>
             <img 
               src="./assets/icons/favicon.svg"
               width={32}
