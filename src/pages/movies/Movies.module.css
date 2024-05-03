@@ -1,0 +1,13 @@
+.content {
+  width: calc(100% - 280px);
+  min-height: calc(100vh - 138px);
+  margin-left: 280px;
+}
+
+.pagination {
+  position: relative;
+  width: 100%;
+  height: 138px;
+  z-index: 3;
+  background: #F5F5F6;
+}
