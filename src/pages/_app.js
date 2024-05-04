@@ -1,5 +1,7 @@
+import '@mantine/core/styles.css'; 
 import Layout from "@/components/Layout";
 import "@/styles/globals.css";
+import { MantineProvider } from "@mantine/core";
 import Head from "next/head";
 
 export default function App({ Component, pageProps }) {
@@ -10,9 +12,11 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/assets/icons/favicon.svg" />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <MantineProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </MantineProvider>
     </>
   )
 }

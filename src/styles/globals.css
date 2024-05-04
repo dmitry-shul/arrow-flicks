@@ -26,6 +26,12 @@ html {
 body {
   margin: 0 auto;
   background: var(--color-background);
+
+  font-family: "Inter", sans-serif !important;
+  font-size: 14px !important;
+  line-height: 140% !important;
+  background-color: #F5F5F6 !important;
+  color: #000000 !important;
 }
 
 ul {

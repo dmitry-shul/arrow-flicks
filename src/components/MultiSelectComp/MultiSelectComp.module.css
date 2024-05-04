@@ -1,0 +1,127 @@
+.root {
+  width: 284px;
+  height: 42px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.input {
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #D5D6DC;
+  background: #fff;
+  padding-left: 12px;
+  position: relative;
+}
+
+.input::placeholder {
+  color: #ACADB9;
+}
+
+.input:hover {
+  border: 1px solid #9854F6;
+}
+
+.input:focus-within {
+  border: 1px solid #9854F6;
+}
+
+.pill {
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pillsList {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown {
+  border-radius: 8px;
+}
+
+.dropdown::-webkit-scrollbar {
+  width: 20px;
+}
+
+.dropdown::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.dropdown::-webkit-scrollbar-thumb {
+  background-color: #050c26;
+  border-radius: 20px;
+  border: 3px solid #050c26;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.input::after {
+  content: "";
+  background: url("/assets/icons/arrow-down.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 10px;
+  right: 14px;
+}*/
+
+
+
+
+
+
+.multiSelector {
+  width: 284px;
+  height: 42px;
+  background: #7434;
+}
+
+.multiSelector label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.multiSelector wrapper {
+  border-radius: 20px;
+  background: rgba(68, 77, 85, 0.4);
+  border: 5px solid #cbd81490;
+}
+
+.multiSelector input {
+  background: #4656;
+  border-radius: 20px;
+}

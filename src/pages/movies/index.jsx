@@ -1,11 +1,12 @@
 import React from 'react'
 import styles from "./Movies.module.css"
+import MultiSelectComp from '@/components/MultiSelectComp'
 
 const Movies = () => {
   return (
     <>
       <div className={styles.content}>
-        2222
+        <MultiSelectComp />
       </div>
 
       <div className={styles.pagination}>
