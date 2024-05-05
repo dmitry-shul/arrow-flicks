@@ -2,14 +2,14 @@
 const nextConfig = {
   reactStrictMode: false,
 
-  async rewrites() {
+  /*async rewrites() {
     return [
       {
-        source: '/getMovies1',
-        destination: 'https://636de0e191576e19e3326ef1.mockapi.io/all/Collection',
+        source: '/movies',
+        destination: 'https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc',
       },
     ];
-  }
+  }*/
 };
 
 export default nextConfig;
