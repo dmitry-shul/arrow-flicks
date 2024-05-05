@@ -5,7 +5,7 @@ import { MultiSelect } from '@mantine/core';
 const MultiSelectComp = () => {
   const [value, setValue] = useState([]);
 
-  console.log(value)
+  //console.log(value)
 
   return (
     <MultiSelect
