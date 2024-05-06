@@ -1,20 +1,22 @@
 import React from 'react'
 import styles from "./Movies.module.css"
-import MultiSelectComp from '@/components/MultiSelectComp'
-import InputRating from '@/components/InputRating'
+import Footer from '@/components/Footer'
+import FiltersSort from '@/components/FiltersSort'
 
 const Movies = () => {
 
   return (
     <>
-      <div className={styles.content}>
-        <MultiSelectComp />
-        <InputRating />
-      </div>
+      <section className={styles.content}>
+        <div className={styles.wrapper}>
+          <h1 className={styles.title}>Movies</h1>
 
-      <div className={styles.pagination}>
-        33333
-      </div>
+          <FiltersSort style={{marginTop: "41px", marginBottom: "24px"}} />
+
+          
+        </div>        
+      </section>
+      <Footer />
     </>
   )
 }

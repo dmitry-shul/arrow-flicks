@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
-import styles from "./MultiSelectComp.module.css"
-import { MultiSelect } from '@mantine/core';
+import styles from "./SelectorSort.module.css"
+import { Select } from '@mantine/core'
 
-const MultiSelectComp = ({...props}) => {
+const SelectorSort = ({...props}) => {
   const [value, setValue] = useState([]);
 
-  //console.log(value)
-
   return (
-    <MultiSelect
+    <Select
       classNames={{
         root: styles.root,
         wrapper: styles.wrapper,
@@ -23,19 +21,19 @@ const MultiSelectComp = ({...props}) => {
         section: styles.section,
         inputField: styles.inputField,
       }}
-      value={value}
       onChange={setValue}
-      label="Genres"
-      placeholder={value.length === 0 ? "Select genre" : ""}
-      rightSection={" "}
+      label="Sort by"
+      placeholder=""
       data={['React', 'Angular', 'Vue', 'Svelte', 'Other', 'Reacct', 'Angulsar', 'Vdue', 'Sverlte', 'Ofther']}
+      rightSection={" "}
       withScrollArea={false}
       styles={{ dropdown: { maxHeight: 188, overflowY: 'auto' } }}
       checkIconPosition="none"
       comboboxProps={{ middlewares: { shift: false }, offset: 8, transitionProps: { transition: 'pop', duration: 200 } }}
+      defaultValue="React"
       {...props}
     />
   )
 }
 
-export default MultiSelectComp
+export default SelectorSort
