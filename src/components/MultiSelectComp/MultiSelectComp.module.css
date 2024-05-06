@@ -1,6 +1,5 @@
 .root {
   width: 284px;
-  height: 42px;
 }
 
 .label {
@@ -10,6 +9,9 @@
 }
 
 .input {
+  height: 42px;
+  display: flex;
+  align-items: center;
   border-radius: 8px;
   font-size: 14px;
   border: 1px solid #D5D6DC;
