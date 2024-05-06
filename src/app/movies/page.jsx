@@ -8,13 +8,21 @@ import MoviesList from '@/components/MoviesList/page'
 const Movies = () => {
 
   const getMovies = () => {
-    const res = fetch("/api/movies?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc")
+    /*?language=en-US
+    &page=1
+    &sort_by=popularity.desc
+    &with_genres=11111
+    &primary_release_year=22222
+    &vote_average.lte=333333
+    &vote_average.gte=444444
+    */
+    const res = fetch("/api/movies?language=en-US&page=1&sort_by=popularity.desc")
     .then(response => response.json())
     .then(response => console.log(response))
   }
 
   useEffect(() => {
-    getMovies()
+    //getMovies()
   }, []);
 
   return (

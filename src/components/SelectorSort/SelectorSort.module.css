@@ -1,5 +1,10 @@
 .root {
-  width: 284px;
+  /*width: 284px;*/
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 150px;
+  max-width: 279px;
 }
 
 .label {

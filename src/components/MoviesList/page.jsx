@@ -10,7 +10,7 @@ const MoviesList = () => {
         cards.map((card, index) =>
           <MovieCard 
             key={card} 
-            style={index === 18 || index === 19 ? {} : {marginBottom: "16px"}} 
+            /*style={index === 18 || index === 19 ? {} : {marginBottom: "16px"}} */
           />
         )
       }

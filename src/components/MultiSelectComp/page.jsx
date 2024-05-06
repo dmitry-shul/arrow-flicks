@@ -3,10 +3,7 @@ import React, { useState } from 'react'
 import styles from "./MultiSelectComp.module.css"
 import { MultiSelect } from '@mantine/core';
 
-const MultiSelectComp = ({label, placeholder, ...props}) => {
-  const [value, setValue] = useState([]);
-
-  //console.log(value)
+const MultiSelectComp = ({label, placeholder, value, setFilters, ...props}) => {
 
   return (
     <MultiSelect
@@ -25,7 +22,7 @@ const MultiSelectComp = ({label, placeholder, ...props}) => {
         inputField: styles.inputField,
       }}
       value={value}
-      onChange={setValue}
+      onChange={(e) => setFilters(e)}
       label={label}
       placeholder={value.length === 0 ? placeholder : ""}
       rightSection={" "}
