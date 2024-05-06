@@ -5,13 +5,18 @@ import InputRating from '@/components/InputRating'
 import SelectorSort from '@/components/SelectorSort'
 
 const FiltersSort = ({...props}) => {
+
   return (
     <div {...props} className={styles.filtersSort}>
       <div className={styles.filters}>
-        <MultiSelectComp />
-        <MultiSelectComp style={{margin: "0 16px", marginLeft: "20px"}} />
-        <InputRating />
-        <InputRating style={{margin: "0 16px 0 8px"}} />
+        <MultiSelectComp label="Genres" placeholder="Select genre" />
+
+        <MultiSelectComp label="Release year" placeholder="Select release year" style={{margin: "0 16px", marginLeft: "20px"}} />
+
+        <InputRating label="Ratings" placeholder="From" />
+
+        <InputRating label="" placeholder="To" style={{margin: "0 16px 0 8px"}} />
+
         <button disabled={false} className={styles.resetBtn}>Reset filters</button>
       </div>
 
@@ -23,3 +28,15 @@ const FiltersSort = ({...props}) => {
 }
 
 export default FiltersSort
+
+
+
+/*
+  {
+    genres: "",
+    releaseYear: "",
+    ratingFrom: "",
+    ratingTo: "",
+    sortBy: "",
+  }
+*/

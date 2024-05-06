@@ -3,14 +3,14 @@ import styles from "./InputRating.module.css"
 import { Input } from '@mantine/core'
 import SVGSelector from '../UI/SVGSelector'
 
-const InputRating = ({...props}) => {
+const InputRating = ({label, placeholder, ...props}) => {
   return (
     <Input.Wrapper 
       classNames={{
         root: styles.root,
         label: styles.label,
       }}
-      label="Ratings" 
+      label={label} 
       {...props}
     >
       <Input 
@@ -18,7 +18,7 @@ const InputRating = ({...props}) => {
           input: styles.input,
         }}
         type='number'
-        placeholder="From" 
+        placeholder={placeholder} 
         rightSection={<SVGSelector/>}
       />
     </Input.Wrapper>

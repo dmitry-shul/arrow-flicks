@@ -2,6 +2,7 @@
   /*width: 138px;*/
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   flex-grow: 1;
   min-width: 100px;
   max-width: 138px;

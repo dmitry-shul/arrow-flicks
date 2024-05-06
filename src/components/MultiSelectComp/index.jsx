@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from "./MultiSelectComp.module.css"
 import { MultiSelect } from '@mantine/core';
 
-const MultiSelectComp = ({...props}) => {
+const MultiSelectComp = ({label, placeholder, ...props}) => {
   const [value, setValue] = useState([]);
 
   //console.log(value)
@@ -25,8 +25,8 @@ const MultiSelectComp = ({...props}) => {
       }}
       value={value}
       onChange={setValue}
-      label="Genres"
-      placeholder={value.length === 0 ? "Select genre" : ""}
+      label={label}
+      placeholder={value.length === 0 ? placeholder : ""}
       rightSection={" "}
       data={['React', 'Angular', 'Vue', 'Svelte', 'Other', 'Reacct', 'Angulsar', 'Vdue', 'Sverlte', 'Ofther']}
       withScrollArea={false}

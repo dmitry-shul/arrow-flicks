@@ -1,0 +1,73 @@
+.card {
+  width: 482px;
+  height: 218px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  cursor: pointer;
+}
+
+.poster {
+  height: 170px;
+}
+
+.moviesInfo {
+  width: 100%;
+  height: 170px;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #9854F6;
+}
+
+.rate {
+  display: flex;
+  align-items: center;
+}
+
+.rate span {
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 4px;
+}
+
+.year {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #7B7C88;
+}
+
+.rates {
+  display: flex;
+  align-items: center;
+}
+
+.rates p {
+  margin-left: 8px;
+  font-size: 16px;
+  color: #7B7C88;
+}
+
+.genres {
+  display: flex;
+  font-size: 16px;
+}
+
+.genres p {
+  margin-right: 8px;
+  color: #7B7C88;
+}

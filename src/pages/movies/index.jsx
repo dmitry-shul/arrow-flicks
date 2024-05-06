@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./Movies.module.css"
 import Footer from '@/components/Footer'
 import FiltersSort from '@/components/FiltersSort'
+import MoviesList from '@/components/MoviesList'
 
 const Movies = () => {
 
@@ -13,7 +14,7 @@ const Movies = () => {
 
           <FiltersSort style={{marginTop: "41px", marginBottom: "24px"}} />
 
-          
+          <MoviesList />
         </div>        
       </section>
       <Footer />
