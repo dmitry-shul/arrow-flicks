@@ -1,0 +1,33 @@
+.filtersSort {
+  width: 100%;
+}
+
+.filters {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.resetBtn {
+  background: none;
+  font-size: 14px;
+  font-weight: normal;
+  color: #9854F6;
+  flex-shrink: 0;
+  height: 42px;
+  align-self: end;
+  cursor: pointer;
+}
+
+.resetBtn:hover {
+  color: #BD93F7;
+}
+
+.resetBtn:active {
+  color: #541F9D;
+}
+
+.sort {
+  display: flex;
+  justify-content: flex-end;
+}

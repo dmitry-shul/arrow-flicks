@@ -1,0 +1,7 @@
+.footer {
+  position: relative;
+  width: 100%;
+  height: 138px;
+  z-index: 3;
+  background: #F5F5F6;
+}

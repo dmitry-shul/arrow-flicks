@@ -1,0 +1,15 @@
+.sideMenu {
+    width: 280px;
+    height: 100vh;
+    background: #F2EBF9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.main {
+    width: 100%;
+}
+
+
