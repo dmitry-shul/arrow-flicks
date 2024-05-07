@@ -5,6 +5,7 @@ import Footer from '@/components/Footer/page'
 import FiltersSort from '@/components/FiltersSort/page'
 import MoviesList from '@/components/MoviesList/page'
 import Modal from '@/components/Modal/page'
+import PaginationComp from '@/components/PaginationComp/page'
 
 const Movies = () => {
   const [visibleModal, setVisibleModal] = useState(false)
@@ -36,6 +37,10 @@ const Movies = () => {
           <FiltersSort style={{marginTop: "41px", marginBottom: "24px"}} />
 
           <MoviesList />
+
+          <div className={styles.paginationSection}>
+            <PaginationComp />
+          </div>
         </div>        
       </section>
       <Footer />

@@ -10,4 +10,14 @@
   width: 980px;
   padding-top: 42px;
   margin: 0 10px;
+  position: relative;
+}
+
+.paginationSection {
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
 }

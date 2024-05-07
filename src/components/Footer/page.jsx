@@ -5,9 +5,7 @@ import PaginationComp from '../PaginationComp/page'
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>
-      <PaginationComp />
-    </div>
+    <div className={styles.footer}></div>
   )
 }
 

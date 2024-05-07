@@ -67,7 +67,7 @@ const FiltersSort = ({ ...props }) => {
           onClick={resetFilters}
           disabled={defaultFilters}
           className={styles.resetBtn}
-          style={defaultFilters ? {color: "#7B7C88"} : {}}
+          style={defaultFilters ? {color: "#7B7C88", cursor: "default"} : {}}
         >
           Reset filters
         </button>

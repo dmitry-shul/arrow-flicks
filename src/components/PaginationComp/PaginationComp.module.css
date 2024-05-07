@@ -1,3 +1,30 @@
-.dots {
-    display: none;
+.pagination {
+    display: flex;
+    gap: 8px;
+}
+
+.pagination button {
+    min-width: 32px;
+    padding: 0 8px;
+    height: 32px;
+    border-radius: 4px;
+    background: white;
+    border: 1px solid #D5D6DC;
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+}
+
+.pagination button:first-child,
+.pagination button:last-child {
+    color: #7B7C88;
+}
+
+.pagination button:disabled {
+    cursor: default;
+}
+
+.pagination button:not(:disabled):hover {
+    background: #BD93F7;
+    color: white;
 }
