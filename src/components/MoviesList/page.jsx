@@ -7,12 +7,17 @@ const MoviesList = () => {
   return (
     <div className={styles.cardList}>
       {
-        cards.map((card, index) =>
-          <MovieCard 
-            key={card} 
-            /*style={index === 18 || index === 19 ? {} : {marginBottom: "16px"}} */
-          />
-        )
+        cards.length == 0
+        ? <div className={styles.notFoundMovies}>
+            <img src="./assets/images/notFoundMovies.png" alt="Not found" />
+            <p>We don't have such movies, look for another one</p>
+          </div>
+        : cards.map((card, index) =>
+            <MovieCard 
+              key={card} 
+              /*style={index === 18 || index === 19 ? {} : {marginBottom: "16px"}} */
+            />
+          )
       }
     </div>
   )

@@ -3,17 +3,19 @@ import React from 'react'
 import styles from "./Header.module.css"
 import Link from 'next/link';
 import ActiveLink from '../ActiveLink/page';
+import Logo from '../UI/Logo';
 
 const Header = () => {
   return (
     <header className={styles.header}>
         <Link href="/movies" className={styles.logo}>
-          <img 
+          {/*<img 
             src="./assets/icons/favicon.svg"
             width={32}
             height={32}
             alt="Logo"
-          />
+          />*/}
+          <Logo />
           <span>ArrowFlicks</span>
         </Link>
 

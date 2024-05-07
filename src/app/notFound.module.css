@@ -1,0 +1,9 @@
+.notFound {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(62, 150, 33);
+    z-index: 100;
+}

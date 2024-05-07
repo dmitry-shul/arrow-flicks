@@ -1,11 +1,13 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from "./Movies.module.css"
 import Footer from '@/components/Footer/page'
 import FiltersSort from '@/components/FiltersSort/page'
 import MoviesList from '@/components/MoviesList/page'
+import Modal from '@/components/Modal/page'
 
 const Movies = () => {
+  const [visibleModal, setVisibleModal] = useState(false)
 
   const getMovies = () => {
     /*?language=en-US
@@ -37,6 +39,7 @@ const Movies = () => {
         </div>        
       </section>
       <Footer />
+      <Modal visible={visibleModal} setVisible={setVisibleModal}>rrr</Modal>
     </>
   )
 }
