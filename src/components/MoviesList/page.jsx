@@ -2,8 +2,11 @@
 import React from 'react'
 import styles from "./MoviesList.module.css"
 import MovieCard from '../MovieCard/page'
+import { useRouter } from 'next/navigation'
 
 const MoviesList = ({cards}) => {
+  const {push} = useRouter()
+
   return (
     <div className={styles.cardList}>
       {
@@ -15,6 +18,7 @@ const MoviesList = ({cards}) => {
         : cards.map((card, index) =>
             <MovieCard 
               key={card} 
+              onClick={() => push(`/movies/name-${card}`)}
               /*style={index === 18 || index === 19 ? {} : {marginBottom: "16px"}} */
             />
           )
