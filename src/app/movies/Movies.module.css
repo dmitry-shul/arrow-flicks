@@ -8,9 +8,13 @@
 
 .wrapper {
   width: 980px;
-  padding-top: 42px;
+  padding-top: 40px;
   margin: 0 10px;
   position: relative;
+}
+
+.title {
+  font-size: 32px;
 }
 
 .paginationSection {

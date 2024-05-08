@@ -1,0 +1,67 @@
+.content {
+    width: calc(100% - 280px);
+    min-height: 100vh;
+    margin-left: 280px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .wrapper {
+    width: 980px;
+    padding-top: 40px;
+    margin: 0 10px;
+    position: relative;
+  }
+
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .title h1 {
+    font-size: 32px;
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
+
+  .paginationSection {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .notFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.notFound p {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 16px 0;
+}
+
+.button {
+    height: 40px;
+    padding: 0 20px;
+    background: #9854F6;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #BD93F7;
+}
+
+.button:active {
+    background: #541F9D;
+}
