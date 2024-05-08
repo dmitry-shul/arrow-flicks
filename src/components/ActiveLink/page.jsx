@@ -7,8 +7,6 @@ import { usePathname } from 'next/navigation'
 const ActiveLink = ({children, href, ...props}) => {
   const pathname = usePathname()
 
-  console.log(pathname)
-
   return (
     <Link {...props} className={pathname.includes(href) ? styles.activeLink : styles.link} href={href}>{children}</Link>
   )
