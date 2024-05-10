@@ -1,0 +1,71 @@
+.content {
+  width: calc(100% - 280px);
+  height: 100vh;
+  margin-left: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 980px;
+  padding-top: 40px;
+  margin: 0 10px;
+  position: relative;
+}
+
+.breadcrumbs {
+  display: flex;
+}
+
+.breadcrumbs a,
+.breadcrumbs p {
+  color: #9854F6;
+}
+
+.breadcrumbs a:hover {
+  color: #BD93F7;
+}
+
+.breadcrumbs a:active {
+  color: #541F9D;
+}
+
+.breadcrumbs span {
+ margin: 0 10px; 
+}
+
+.mainCard {
+  height: 400px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  padding: 24px;
+  margin: 20px 0;
+}
+
+.poster {
+  height: 352px;
+}
+
+.moviesInfo {
+  width: 100%;
+  height: 100%;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.additionalInfo {
+  display: flex;
+}
+
+.additionalInfo__titles {
+  display: flex;
+  flex-direction: column;
+}
+
+.additionalInfo__values {
+  display: flex;
+  flex-direction: column;
+}

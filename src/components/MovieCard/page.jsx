@@ -6,8 +6,8 @@ import MovieTitle from '../MovieTitle/page'
 const MovieCard = ({...props}) => {
   return (
     <div {...props} className={styles.card}>
-      {/*<img className={styles.poster} src="./assets/images/noPoster.png" alt="poster not found" />*/}
-      <img className={styles.poster} src="./assets/images/cardImg.png" alt="poster" />
+      {/*<img className={styles.poster} src="/assets/images/noPoster.png" alt="poster not found" />*/}
+      <img className={styles.poster} src="/assets/images/cardImg.png" alt="poster" />
 
       <div className={styles.moviesInfo}>
         <MovieTitle />
