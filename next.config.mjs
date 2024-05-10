@@ -4,37 +4,11 @@ const nextConfig = {
   rewrites: async () => {
     return [
       {
-        source: '/movies',
-        destination: '/aaaa',
+        source: '/movie/:path*',
+        destination: `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.API_KEY_SH}&/:path*`,
       },
     ];
   },
-  /*rewrites: async () => {
-    return [
-      {
-        source: '/movies/:path*',
-        destination: 'https://api.themoviedb.org/3/discover/movies/:path*',
-        /*has: [
-          {
-            type: "host",
-            key: 'method',
-            value: 'GET',
-          },
-          {
-            type: "header",
-            key: 'accept',
-            value: 'application/json',
-          },
-          {
-            type: "header",
-            key: 'Authorization',
-            value: 'Bearer ' + process.env.API_KEY,
-          },
-        ],*/
-          
-      /*},
-    ];
-  },*/
 };
 
 export default nextConfig;

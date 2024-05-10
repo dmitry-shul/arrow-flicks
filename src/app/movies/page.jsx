@@ -10,7 +10,7 @@ import PaginationComp from '@/components/PaginationComp/page'
 const Movies = () => {
   const [visibleModal, setVisibleModal] = useState(false)
 
-  const getMovies = () => {
+  const getMovies = async () => {
     /*?language=en-US
     &page=1
     &sort_by=popularity.desc
@@ -19,13 +19,13 @@ const Movies = () => {
     &vote_average.lte=333333
     &vote_average.gte=444444
     */
-    const res = fetch("/api/movies?language=en-US&page=1&sort_by=popularity.desc")
+    const res = fetch("/movie?language=en-US&page=1&sort_by=popularity.desc")
     .then(response => response.json())
     .then(response => console.log(response))
   }
 
   useEffect(() => {
-    //getMovies()
+    getMovies()
   }, []);
 
   return (
