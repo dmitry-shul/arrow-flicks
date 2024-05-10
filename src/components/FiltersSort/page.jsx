@@ -48,29 +48,31 @@ const FiltersSort = ({ ...props }) => {
           style={{ margin: "0 16px", marginLeft: "20px" }}
         />
 
-        <InputRating
-          label="Ratings"
-          placeholder="From"
-          value={filters.ratingFrom}
-          setFilters={(e) => setFilters({ ...filters, ratingFrom: e })}
-        />
+        <div className={styles.ratingAndBtn}>
+          <InputRating
+            label="Ratings"
+            placeholder="From"
+            value={filters.ratingFrom}
+            setFilters={(e) => setFilters({ ...filters, ratingFrom: e })}
+          />
 
-        <InputRating
-          label=""
-          placeholder="To"
-          style={{ margin: "0 16px 0 8px" }}
-          value={filters.ratingTo}
-          setFilters={(e) => setFilters({ ...filters, ratingTo: e })}
-        />
+          <InputRating
+            label=""
+            placeholder="To"
+            style={{ margin: "0 16px 0 8px" }}
+            value={filters.ratingTo}
+            setFilters={(e) => setFilters({ ...filters, ratingTo: e })}
+          />
 
-        <button
-          onClick={resetFilters}
-          disabled={defaultFilters}
-          className={styles.resetBtn}
-          style={defaultFilters ? {color: "#7B7C88", cursor: "default"} : {}}
-        >
-          Reset filters
-        </button>
+          <button
+            onClick={resetFilters}
+            disabled={defaultFilters}
+            className={styles.resetBtn}
+            style={defaultFilters ? {color: "#7B7C88", cursor: "default"} : {}}
+          >
+            Reset filters
+          </button>
+        </div>
       </div>
 
       <div className={styles.sort}>

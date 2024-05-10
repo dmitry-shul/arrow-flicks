@@ -13,7 +13,7 @@
 }
 
 .input {
-  height: 42px;
+  min-height: 42px;
   display: flex;
   align-items: center;
   border-radius: 8px;

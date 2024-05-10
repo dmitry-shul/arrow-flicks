@@ -6,6 +6,11 @@
   margin-bottom: 24px;
   display: flex;
   justify-content: space-between;
+  align-items: start;
+}
+
+.ratingAndBtn {
+  display: flex;
 }
 
 .resetBtn {
