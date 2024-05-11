@@ -6,9 +6,10 @@ import FiltersSort from '@/components/FiltersSort/page'
 import MoviesList from '@/components/MoviesList/page'
 import Modal from '@/components/Modal/page'
 import PaginationComp from '@/components/PaginationComp/page'
+import RatingComp from '@/components/RatingComp/page'
 
 const Movies = () => {
-  const [visibleModal, setVisibleModal] = useState(false)
+  const [visibleModal, setVisibleModal] = useState(true)
 
   const getMovies = async () => {
     /*?language=en-US
@@ -44,7 +45,9 @@ const Movies = () => {
         </div>        
       </section>
       <Footer />
-      <Modal visible={visibleModal} setVisible={setVisibleModal}>rrr</Modal>
+      <Modal visible={visibleModal} setVisible={setVisibleModal}>
+        <RatingComp />
+      </Modal>
     </>
   )
 }

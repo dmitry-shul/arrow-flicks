@@ -1,0 +1,9 @@
+.rating {
+  display: flex;
+  gap: 8px;
+}
+
+.rating label {
+  width: 28px;
+  height: 28px;
+}
