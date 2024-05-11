@@ -13,13 +13,8 @@
   }
   
   .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     background: white;
     border-radius: 8px;
-    padding: 16px;
     width: 380px;
     height: 208px;
   }
@@ -27,3 +22,65 @@
   .active {
     display: flex;
   }
+
+.header {
+  height: 54px;
+  display: flex;
+  border-bottom: 1px solid #EAEBED;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+}  
+
+.main {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main h5 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.buttons {
+  margin-top: 18px;
+  display: flex;
+  width: 188px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.saveBtn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #9854F6;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.saveBtn:hover {
+  background: #BD93F7;
+}
+
+.saveBtn:active {
+  background: #541F9D;
+}
+
+.removeBtn {
+  font-weight: 600;
+  color: #9854F6;
+  background: none;
+  cursor: pointer;
+}
+
+.removeBtn:hover {
+  color: #BD93F7;
+}
+
+.removeBtn:active {
+  color: #541F9D;
+}

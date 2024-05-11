@@ -9,7 +9,7 @@ import PaginationComp from '@/components/PaginationComp/page'
 import RatingComp from '@/components/RatingComp/page'
 
 const Movies = () => {
-  const [visibleModal, setVisibleModal] = useState(true)
+  const [visibleModal, setVisibleModal] = useState(false)
 
   const getMovies = async () => {
     /*?language=en-US
@@ -45,9 +45,7 @@ const Movies = () => {
         </div>        
       </section>
       <Footer />
-      <Modal visible={visibleModal} setVisible={setVisibleModal}>
-        <RatingComp />
-      </Modal>
+      <Modal visible={visibleModal} setVisible={setVisibleModal} />
     </>
   )
 }

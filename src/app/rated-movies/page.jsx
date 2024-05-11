@@ -36,7 +36,7 @@ const RatedMovies = ({cards=[1,2,3,4,5,6]}) => {
             </div> 
         }       
       </section>
-      <Modal visible={visibleModal} setVisible={setVisibleModal}>rrr</Modal>
+      <Modal visible={visibleModal} setVisible={setVisibleModal} />
     </>
   )
 }
