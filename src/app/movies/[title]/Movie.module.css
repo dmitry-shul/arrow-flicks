@@ -7,7 +7,7 @@
 }
 
 .wrapper {
-  width: 980px;
+  width: 800px;
   padding-top: 40px;
   margin: 0 10px;
   position: relative;
@@ -34,38 +34,3 @@
  margin: 0 10px; 
 }
 
-.mainCard {
-  height: 400px;
-  background: white;
-  border-radius: 12px;
-  display: flex;
-  padding: 24px;
-  margin: 20px 0;
-}
-
-.poster {
-  height: 352px;
-}
-
-.moviesInfo {
-  width: 100%;
-  height: 100%;
-  margin-left: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.additionalInfo {
-  display: flex;
-}
-
-.additionalInfo__titles {
-  display: flex;
-  flex-direction: column;
-}
-
-.additionalInfo__values {
-  display: flex;
-  flex-direction: column;
-}

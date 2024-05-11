@@ -1,0 +1,44 @@
+.secondaryCard {
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  flex-grow: 1;
+  max-width: 800px;
+}
+
+.trailer h5,
+.description h5,
+.production h5 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.trailer video {
+  width: 500px;
+  height: 280px;
+  border-radius: 9px;
+  background: rgb(157, 157, 166);
+  margin-top: 16px;
+}
+
+.description {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: 1px solid #D5D6DC;
+  border-bottom: 1px solid #D5D6DC;
+}
+
+.description p {
+  font-size: 16px;
+  width: 690px;
+  margin-top: 16px;
+}
+
+.production div {
+  display: flex;
+  margin-top: 16px;
+}
+
+.production p {
+  margin-left: 8px;
+}
