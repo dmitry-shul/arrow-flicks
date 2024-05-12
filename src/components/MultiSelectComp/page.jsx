@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import styles from "./MultiSelectComp.module.css"
 import { MultiSelect } from '@mantine/core';
 
-const MultiSelectComp = ({label, placeholder, value, setFilters, ...props}) => {
+const MultiSelectComp = ({genres, label, placeholder, value, setFilters, ...props}) => {
 
   return (
     <MultiSelect
@@ -26,7 +26,7 @@ const MultiSelectComp = ({label, placeholder, value, setFilters, ...props}) => {
       label={label}
       placeholder={value.length === 0 ? placeholder : ""}
       rightSection={" "}
-      data={['React', 'Angular', 'Vue', 'Svelte', 'Other', 'Reacct', 'Angulsar', 'Vdue', 'Sverlte', 'Ofther']}
+      data={genres}
       withScrollArea={false}
       styles={{ dropdown: { maxHeight: 188, overflowY: 'auto' } }}
       checkIconPosition="none"

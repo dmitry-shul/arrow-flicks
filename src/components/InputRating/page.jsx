@@ -23,6 +23,8 @@ const InputRating = ({label, placeholder, value, setFilters, ...props}) => {
         rightSection={<SVGSelector/>}
         value={value}
         onChange={(e) => setFilters(e.target.value)}
+        min={0}
+        max={10}
       />
     </Input.Wrapper>
   )

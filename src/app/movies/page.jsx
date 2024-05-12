@@ -10,6 +10,13 @@ import RatingComp from '@/components/RatingComp/page'
 
 const Movies = () => {
   const [visibleModal, setVisibleModal] = useState(false)
+  const [filters, setFilters] = useState({
+    genres: [],
+    releaseYear: null,
+    ratingFrom: "",
+    ratingTo: "",
+    sortBy: "popularity.desc",
+  });
 
   const getMovies = async () => {
     /*?language=en-US
@@ -20,14 +27,14 @@ const Movies = () => {
     &vote_average.lte=333333
     &vote_average.gte=444444
     */
-    const res = fetch("/movie?language=en-US&page=1&sort_by=popularity.desc")
+    const res = fetch(`/movie?language=en-US&page=1&sort_by=${filters.sortBy}&with_genres=${filters.genres.map(item => item.id)}&primary_release_year=${filters.releaseYear}&vote_average.lte=${filters.ratingTo}&vote_average.gte=${filters.ratingFrom}`)
     .then(response => response.json())
     .then(response => console.log(response))
   }
 
   useEffect(() => {
     //getMovies()
-  }, []);
+  }, [filters]);
 
   return (
     <>
@@ -35,7 +42,7 @@ const Movies = () => {
         <div className={styles.wrapper}>
           <h1 className={styles.title}>Movies</h1>
 
-          <FiltersSort style={{marginTop: "41px", marginBottom: "24px"}} />
+          <FiltersSort filters={filters} setFilters={setFilters} style={{marginTop: "41px", marginBottom: "24px"}} />
 
           <MoviesList cards={[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]} />
 

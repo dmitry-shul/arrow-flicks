@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import styles from "./SelectorSort.module.css"
 import { Select } from '@mantine/core'
 
-const SelectorSort = ({label, placeholder, defaultValue, value, setFilters, ...props}) => {
+const SelectorSort = ({data, label, placeholder, defaultValue, value, setFilters, allowDeselect, ...props}) => {
 
   return (
     <Select
@@ -25,13 +25,14 @@ const SelectorSort = ({label, placeholder, defaultValue, value, setFilters, ...p
       onChange={(e) => setFilters(e)}
       label={label}
       placeholder={placeholder}
-      data={['React', 'Angular', 'Vue', 'Svelte', 'Other', 'Reacct', 'Angulsar', 'Vdue', 'Sverlte', 'Ofther']}
+      data={data}
       rightSection={" "}
       withScrollArea={false}
       styles={{ dropdown: { maxHeight: 188, overflowY: 'auto' } }}
       checkIconPosition="none"
       comboboxProps={{ middlewares: { shift: false }, offset: 8, transitionProps: { transition: 'pop', duration: 200 } }}
       defaultValue={defaultValue}
+      allowDeselect={allowDeselect}
       {...props}
     />
   )
