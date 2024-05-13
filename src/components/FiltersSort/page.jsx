@@ -5,15 +5,18 @@ import MultiSelectComp from "@/components/MultiSelectComp/page";
 import InputRating from "@/components/InputRating/page";
 import SelectorSort from "@/components/SelectorSort/page";
 import { useFetching } from "@/hooks/useFetching";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { setGenres } from "@/redux/features/genresSlice";
 
 const FiltersSort = ({filters, setFilters, ...props }) => {
   const [defaultFilters, setDefaultFilters] = useState(true)
-  const [genres, setGenres] = useState([])
+  const genres = useAppSelector((state) => state.genre.genres)
+  const dispatch = useAppDispatch()
 
-  const [fetchGenres, isGenresLoading, genresError] = useFetching(async () => {
+  const [fetchGenres, isGenresLoading, isGenresLoaded, genresError] = useFetching(async () => {
     await fetch("/genres") 
     .then(response => response.json())
-    .then(response => setGenres(response))
+    .then(response => dispatch(setGenres(response)))
   });
 
   useEffect(() => {
@@ -50,7 +53,7 @@ const FiltersSort = ({filters, setFilters, ...props }) => {
         <MultiSelectComp
           genres={genres?.genres?.map(item => item.name)}
           label="Genres"
-          placeholder="Select genre"
+          placeholder={isGenresLoaded ? "Select genre" : "Loading..."}
           value={filters.genres.map(item => item.name)}
           setFilters={(e) => setSelectedGenres(e)}
         />

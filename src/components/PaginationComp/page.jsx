@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import styles from "./PaginationComp.module.css"
 import { Pagination } from '@mantine/core';
 
-const PaginationComp = ({/*page=1, */totalPages=7}) => {
-  const [page, setPage] = useState(1)
+const PaginationComp = ({page, setPage, totalPage}) => {
+  const totalPages = totalPage <= 500 ? totalPage : 500
 
   return (
     <div className={styles.pagination}>

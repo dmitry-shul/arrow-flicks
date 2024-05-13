@@ -1,5 +1,6 @@
 .card {
   /*max-width: 482px;*/
+  min-width: 482px;
   min-height: 218px;
   background: white;
   border-radius: 12px;
@@ -31,4 +32,8 @@
 .genres p {
   margin-right: 8px;
   color: #7B7C88;
+}
+
+.genres span {
+  max-width: 230px;
 }

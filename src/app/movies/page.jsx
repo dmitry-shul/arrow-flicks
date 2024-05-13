@@ -6,10 +6,13 @@ import FiltersSort from '@/components/FiltersSort/page'
 import MoviesList from '@/components/MoviesList/page'
 import Modal from '@/components/Modal/page'
 import PaginationComp from '@/components/PaginationComp/page'
-import RatingComp from '@/components/RatingComp/page'
+import { useFetching } from '@/hooks/useFetching'
+import LoaderComp from '@/components/LoaderComp/page'
 
 const Movies = () => {
   const [visibleModal, setVisibleModal] = useState(false)
+  const [page, setPage] = useState(1)
+  const [movies, setMovies] = useState({})
   const [filters, setFilters] = useState({
     genres: [],
     releaseYear: null,
@@ -18,23 +21,19 @@ const Movies = () => {
     sortBy: "popularity.desc",
   });
 
-  const getMovies = async () => {
-    /*?language=en-US
-    &page=1
-    &sort_by=popularity.desc
-    &with_genres=11111
-    &primary_release_year=22222
-    &vote_average.lte=333333
-    &vote_average.gte=444444
-    */
-    const res = fetch(`/movie?language=en-US&page=1&sort_by=${filters.sortBy}&with_genres=${filters.genres.map(item => item.id)}&primary_release_year=${filters.releaseYear}&vote_average.lte=${filters.ratingTo}&vote_average.gte=${filters.ratingFrom}`)
+  const [fetchMovies, isMoviesLoading, isMoviesLoaded, moviesError] = useFetching(async () => {
+    await fetch(`/movie?language=en-US&page=${page}&sort_by=${filters.sortBy}&with_genres=${filters.genres.map(item => item.id).join("%2C")}&primary_release_year=${filters.releaseYear}&vote_average.lte=${filters.ratingTo}&vote_average.gte=${filters.ratingFrom}`)
     .then(response => response.json())
-    .then(response => console.log(response))
-  }
+    .then(response => setMovies(response))
+  });
 
   useEffect(() => {
-    //getMovies()
-  }, [filters]);
+    fetchMovies()
+  }, [filters, page])
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page])
 
   return (
     <>
@@ -44,11 +43,18 @@ const Movies = () => {
 
           <FiltersSort filters={filters} setFilters={setFilters} style={{marginTop: "41px", marginBottom: "24px"}} />
 
-          <MoviesList cards={[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]} />
+          {
+            isMoviesLoaded
+            ? <>
+                <MoviesList movies={movies} />
+                <div className={styles.paginationSection}>
+                  <PaginationComp page={page} setPage={setPage} totalPage={movies.total_pages} />
+                </div>
+              </>
+            : <LoaderComp />
+          }
 
-          <div className={styles.paginationSection}>
-            <PaginationComp />
-          </div>
+          
         </div>        
       </section>
       <Footer />
