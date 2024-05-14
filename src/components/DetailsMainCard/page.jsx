@@ -14,7 +14,7 @@ const DetailsMainCard = ({details}) => {
       {
         poster_path === ""
         ? <img className={styles.poster} src="/assets/images/noPosterBig.png" alt="poster not found" />
-        : <img className={styles.poster} src={`https://image.tmdb.org/t/p/w300/${poster_path}`} alt="poster" />
+        : <img className={styles.poster} src={`/img/w300/${poster_path}`} alt="poster" />
       }
 
       <div className={styles.moviesInfo}>

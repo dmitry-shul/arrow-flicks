@@ -15,6 +15,10 @@ const nextConfig = {
         source: '/details/:path*',
         destination: `https://api.themoviedb.org/3/movie/:path*?api_key=${process.env.API_KEY_SH}&`,
       },
+      {
+        source: '/img/:path*',
+        destination: `https://image.tmdb.org/t/p/:path*`,
+      },
     ];
   },
 };

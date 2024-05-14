@@ -25,7 +25,7 @@ const DetailsSecondaryCard = ({details, ...props}) => {
         {
           production_companies?.map(item => 
             <div key={item.logo_path}>
-              <img src={`https://image.tmdb.org/t/p/w200/${item.logo_path}`} alt={item.name} />
+              <img src={`/img/w200/${item.logo_path}`} alt={item.name} />
               <p>{item.name}</p>
             </div>
           )
