@@ -1,36 +1,35 @@
 'use client'
 import React from 'react'
 import styles from "./DetailsSecondaryCard.module.css"
+import YouTube from 'react-youtube';
 
-const DetailsSecondaryCard = ({...props}) => {
+const DetailsSecondaryCard = ({details, ...props}) => {
+  const {videos, overview, production_companies} = details
+
   return (
     <div {...props} className={styles.secondaryCard}>
       <div className={styles.trailer}>
         <h5>Trailer</h5>
-        <video src="#" className={styles.video}></video>
+
+        <YouTube videoId={videos?.results[0].key} title={videos?.results[0].name} />
       </div>
 
       <div className={styles.description}>
         <h5>Description</h5>
-        <p>Dan Brown's controversial best-selling novel about a powerful secret that's been kept under wraps for thousands of years comes to the screen in this suspense thriller from Director Ron Howard. </p>
+        <p>{overview}</p>
       </div>
 
       <div className={styles.production}>
         <h5>Production</h5>
-        <div>
-          <span>aa</span>
-          <p>Castle Rock Entertainment</p>
-        </div>
 
-        <div>
-          <span>aa</span>
-          <p>Castle Rock Entertainment</p>
-        </div>
-
-        <div>
-          <span>aa</span>
-          <p>Castle Rock Entertainment</p>
-        </div>
+        {
+          production_companies?.map(item => 
+            <div key={item.logo_path}>
+              <img src={`https://image.tmdb.org/t/p/w200/${item.logo_path}`} alt={item.name} />
+              <p>{item.name}</p>
+            </div>
+          )
+        }
       </div>
     </div>
   )

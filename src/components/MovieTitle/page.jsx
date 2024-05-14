@@ -6,7 +6,7 @@ import { intToString } from '@/utils/intToString'
 
 const MovieTitle = ({movie}) => {
   const {original_title, release_date, vote_average, vote_count} = movie
-  const voteCount = intToString(vote_count)  
+  const voteCount = intToString(vote_count) 
 
   return (
     <div>
@@ -18,12 +18,12 @@ const MovieTitle = ({movie}) => {
         </div>
       </div>
 
-      <div className={styles.year}>{release_date.slice(0, 4)}</div>
+      <div className={styles.year}>{release_date?.slice(0, 4)}</div>
 
       <div className={styles.rates}>
         <div className={styles.rate}>
           <RateStar color="FAB005"/>
-          <span>{vote_average.toFixed(1)}</span>
+          <span>{vote_average?.toFixed(1)}</span>
         </div>
         <p>({voteCount})</p>
       </div>

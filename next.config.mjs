@@ -11,6 +11,10 @@ const nextConfig = {
         source: '/genres',
         destination: `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.API_KEY_SH}&language=en`,
       },
+      {
+        source: '/details/:path*',
+        destination: `https://api.themoviedb.org/3/movie/:path*?api_key=${process.env.API_KEY_SH}&`,
+      },
     ];
   },
 };

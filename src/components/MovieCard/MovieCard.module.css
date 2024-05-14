@@ -9,6 +9,7 @@
   padding: 24px;
   cursor: pointer;
   flex-grow: 1;
+  flex-basis: 48%;
 }
 
 .poster {

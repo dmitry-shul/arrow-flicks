@@ -10,18 +10,13 @@ const MoviesList = ({movies}) => {
   return (
     <div className={styles.cardList}>
       {
-        movies?.results?.length == 0
-        ? <div className={styles.notFoundMovies}>
-            <img src="./assets/images/notFoundMovies.png" alt="Not found" />
-            <p>We don't have such movies, look for another one</p>
-          </div>
-        : movies?.results?.map((movie, index) =>
-            <MovieCard 
-              key={movie.id} 
-              movie={movie}
-              onClick={() => push(`/movies/${movie.id}`)}
-            />
-          )
+        movies?.results?.map((movie, index) =>
+          <MovieCard 
+            key={movie.id} 
+            movie={movie}
+            onClick={() => push(`/movies/${movie.id}`)}
+          />
+        )
       }
     </div>
   )

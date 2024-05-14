@@ -2,15 +2,23 @@
 import React from 'react'
 import styles from "./DetailsMainCard.module.css"
 import MovieTitle from '../MovieTitle/page'
+import { convertMinsToHrsMins } from '@/utils/convertMinsToHrsMins'
+import { convertDateToUSFormat } from '@/utils/convertDateToUSFormat'
+import { formatCurrency } from '@/utils/formatCurrency'
 
-const DetailsMainCard = () => {
+const DetailsMainCard = ({details}) => {
+  const {poster_path, runtime, release_date, budget, revenue, genres} = details
+
   return (
     <div className={styles.mainCard}>
-      {/*<img className={styles.poster} src="./assets/images/noPoster.png" alt="poster not found" />*/}
-      <img className={styles.poster} src="/assets/images/cardImg.png" alt="poster" />
+      {
+        poster_path === ""
+        ? <img className={styles.poster} src="/assets/images/noPosterBig.png" alt="poster not found" />
+        : <img className={styles.poster} src={`https://image.tmdb.org/t/p/w300/${poster_path}`} alt="poster" />
+      }
 
       <div className={styles.moviesInfo}>
-        <MovieTitle />
+        <MovieTitle movie={details} />
 
         <div className={styles.additionalInfo}>
           <div className={styles.additionalInfo__titles}>
@@ -22,11 +30,11 @@ const DetailsMainCard = () => {
           </div>
 
           <div className={styles.additionalInfo__values}>
-            <span>3h 09m</span>
-            <span>December 6, 1999</span>
-            <span>$125,000,000</span>
-            <span>$760,006,945</span>
-            <span>Drama, Crime, Fantasy</span>
+            <span>{convertMinsToHrsMins(runtime)}</span>
+            <span>{convertDateToUSFormat(release_date)}</span>
+            <span>{formatCurrency(budget)}</span>
+            <span>{formatCurrency(revenue)}</span>
+            <span>{genres?.map(item => item.name).join(", ")}</span>
           </div>
         </div>
       </div>

@@ -1,31 +1,25 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./Movie.module.css"
-import { usePathname } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import DetailsMainCard from '@/components/DetailsMainCard/page'
 import DetailsSecondaryCard from '@/components/DetailsSecondaryCard/page'
+import { useFetching } from '@/hooks/useFetching'
 
 const Movie = () => {
-    const pathname = usePathname()
+  const params = useParams()
+  const [details, setDetails] = useState({})
 
-  const getMovie = () => {
-    /*?language=en-US
-    &page=1
-    &sort_by=popularity.desc
-    &with_genres=11111
-    &primary_release_year=22222
-    &vote_average.lte=333333
-    &vote_average.gte=444444
-    */
-    const res = fetch("/api/movies?language=en-US&page=1&sort_by=popularity.desc")
+  const [fetchDetails, isDetailsLoading, isDetailsLoaded, detailsError] = useFetching(async () => {
+    await fetch(`/details/${params.title}?language=en-US&append_to_response=videos`)
     .then(response => response.json())
-    .then(response => console.log(response))
-  }
+    .then(response => setDetails(response))
+  });
 
   useEffect(() => {
-    //getMovie()
-  }, []);
+    fetchDetails()
+  }, [])
 
   return (
     <section className={styles.content}>
@@ -33,11 +27,11 @@ const Movie = () => {
         <div className={styles.breadcrumbs}>
           <Link href="/movies">Movies</Link>
           <span>/</span>
-          <p>The Green mile</p>
+          <p>{details.original_title}</p>
         </div>
 
-        <DetailsMainCard />
-        <DetailsSecondaryCard />
+        <DetailsMainCard details={details} />
+        <DetailsSecondaryCard details={details} />
 
         <div style={{height: "70px"}} />
       </div>        

@@ -44,14 +44,19 @@ const Movies = () => {
           <FiltersSort filters={filters} setFilters={setFilters} style={{marginTop: "41px", marginBottom: "24px"}} />
 
           {
-            isMoviesLoaded
-            ? <>
+            !isMoviesLoaded
+            ? <LoaderComp />
+            : movies?.results?.length == 0 || moviesError !== ""
+            ? <div className={styles.notFoundMovies}>
+                <img src="./assets/images/notFoundMovies.png" alt="Not found" />
+                <p>We don't have such movies, look for another one</p>
+              </div>
+            : <>
                 <MoviesList movies={movies} />
                 <div className={styles.paginationSection}>
                   <PaginationComp page={page} setPage={setPage} totalPage={movies.total_pages} />
                 </div>
               </>
-            : <LoaderComp />
           }
 
           
