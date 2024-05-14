@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   genres: {},
+  mark: false
 }
 
 export const genresSlice = createSlice({
@@ -11,8 +12,11 @@ export const genresSlice = createSlice({
     setGenres: (state, action) => {
       state.genres = action.payload
     },
+    setMark: (state) => {
+      state.mark = !state.mark
+    },
   },
 })
 
-export const {setGenres} = genresSlice.actions
+export const {setGenres, setMark} = genresSlice.actions
 export default genresSlice.reducer

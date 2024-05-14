@@ -1,21 +1,40 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./RatedMovies.module.css"
-import Modal from '@/components/Modal/page'
 import Search from '@/components/Search/page'
 import MoviesList from '@/components/MoviesList/page'
 import PaginationComp from '@/components/PaginationComp/page'
 import Image from 'next/image'
 import Link from 'next/link'
+import LoaderComp from '@/components/LoaderComp/page'
+import { useAppSelector } from '@/redux/hooks'
 
-const RatedMovies = ({cards=[]}) => {
-  const [visibleModal, setVisibleModal] = useState(false)
+const RatedMovies = () => {
+  const [movies, setMovies] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+  const mark = useAppSelector((state) => state.genre.mark)
+
+  useEffect(() => {
+    const rates = getRatesFromLocalStorage()
+    setMovies(rates.map(item => item.movie))
+    setIsLoading(false)
+  }, [mark])
+
+  const getRatesFromLocalStorage = () => {
+    if(localStorage.getItem('rates')) {
+      const rates = JSON.parse(localStorage.getItem('rates'))
+      return rates
+    }
+    return []
+  }
   
   return (
     <>
       <section className={styles.content}>
-        {
-          cards.length === 0
+        { 
+          isLoading
+          ? <LoaderComp />
+          : movies.length === 0
           ? <div className={styles.notFound}>
               <Image src="/assets/images/notFoundRatedMovies.png" width={400} height={300} alt="Not found rated movies" priority />
               <p>You haven't rated any films yet</p>
@@ -28,15 +47,14 @@ const RatedMovies = ({cards=[]}) => {
                 <Search className={styles.search} />
               </div>
 
-              <MoviesList cards={cards} />
+              <MoviesList movies={movies} />
 
               <div className={styles.paginationSection}>
-                {/*<PaginationComp />*/}
+                {/*<PaginationComp page={} setPage={} totalPage={} />*/}
               </div>
             </div> 
         }       
       </section>
-      <Modal visible={visibleModal} setVisible={setVisibleModal} />
     </>
   )
 }

@@ -50,7 +50,7 @@ const Movies = () => {
                 <p>We don't have such movies, look for another one</p>
               </div>
             : <>
-                <MoviesList movies={movies} />
+                <MoviesList movies={movies?.results} />
                 <div className={styles.paginationSection}>
                   <PaginationComp page={page} setPage={setPage} totalPage={movies.total_pages} />
                 </div>

@@ -1,28 +1,68 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from "./UserRatings.module.css"
 import RateStar from '../UI/RateStar'
 import Modal from '../Modal/page'
 import { CloseButton } from '@mantine/core'
 import RatingComp from '../RatingComp/page'
+import { useAppDispatch } from '@/redux/hooks'
+import { setMark } from '@/redux/features/genresSlice'
 
 const UserRatings = ({movie}) => {
+  const dispatch = useAppDispatch()
   const [visibleModal, setVisibleModal] = useState(false)
+  const [rateLS, setRateLS] = useState({})
   const [myRate, setMyRate] = useState(0)
   const {original_title, id} = movie
-
-  console.log(myRate, id)
   
-  const handler = (e) => {
+  const openModal = (e) => {
     e.stopPropagation()
     setVisibleModal(!visibleModal)
   }
 
+  useEffect(() => {
+    const rates = getRatesFromLocalStorage()
+    const thisRate = rates.find(item => item.movieID == id)
+    setRateLS(thisRate)
+    setMyRate(thisRate?.rate)
+  }, [visibleModal])
+
+  const getRatesFromLocalStorage = () => {
+    if(localStorage.getItem('rates')) {
+      const rates = JSON.parse(localStorage.getItem('rates'))
+      return rates
+    }
+    return []
+  }
+
+  const saveRateToLocalStorage = () => {
+    let rates = getRatesFromLocalStorage()
+    const thisRate = rates.find(item => item.movieID == id)
+    setRateLS(thisRate)
+    if(thisRate) {
+      rates = rates.filter(item => item.movieID !== id)
+      setRateLS({movieID: id, rate: myRate})
+    }
+    localStorage.setItem('rates', JSON.stringify([...rates , {movieID: id, rate: myRate, movie}]));
+    setVisibleModal(false)
+  }
+
+  const removeRateFromLocalStorage = () => {
+    let rates = getRatesFromLocalStorage()
+    if(rateLS) {
+      rates = rates.filter(item => item.movieID !== id)
+      setRateLS({})
+    }
+    localStorage.setItem('rates', JSON.stringify([...rates]));
+    setVisibleModal(false)
+    dispatch(setMark())
+  }
+
   return (
-    <div onClick={(e) => handler(e)}>
+    <div onClick={(e) => openModal(e)}>
       <div className={styles.rate}>
-        <RateStar color={"D5D6DC"}/>
-        <span></span>
+        <RateStar color={rateLS ? "9854F6" : "D5D6DC"}/>
+        <span>{rateLS?.rate}</span>
       </div>
       <Modal visible={visibleModal} setVisible={setVisibleModal}>
         <div className={styles.header}>
@@ -35,8 +75,8 @@ const UserRatings = ({movie}) => {
           <RatingComp myRate={myRate} setMyRate={setMyRate} />
 
           <div className={styles.buttons}>
-            <button className={styles.saveBtn}>Save</button>
-            <button className={styles.removeBtn}>Remove rating</button>
+            <button onClick={saveRateToLocalStorage} className={styles.saveBtn}>Save</button>
+            <button onClick={removeRateFromLocalStorage} className={styles.removeBtn}>Remove rating</button>
           </div>
         </div>
       </Modal>
