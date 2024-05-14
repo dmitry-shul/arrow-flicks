@@ -3,9 +3,9 @@ import React from 'react'
 import styles from "./RatingComp.module.css"
 import { Rating } from '@mantine/core';
 
-const RatingComp = () => {
+const RatingComp = ({myRate, setMyRate}) => {
   return (
-    <Rating count={10} size="xl" className={styles.rating} />
+    <Rating value={myRate} onChange={setMyRate} count={10} size="xl" className={styles.rating} />
   )
 }
 

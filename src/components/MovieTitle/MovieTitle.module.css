@@ -12,17 +12,6 @@
   line-height: 26px;
 }
 
-.rate {
-  display: flex;
-  align-items: center;
-}
-
-.rate span {
-  font-size: 16px;
-  font-weight: 700;
-  margin-left: 4px;
-}
-
 .year {
   margin: 8px 0;
   font-size: 16px;

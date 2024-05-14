@@ -8,7 +8,7 @@ import PaginationComp from '@/components/PaginationComp/page'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const RatedMovies = ({cards=[1,2,3,4,5,6]}) => {
+const RatedMovies = ({cards=[]}) => {
   const [visibleModal, setVisibleModal] = useState(false)
   
   return (
@@ -31,7 +31,7 @@ const RatedMovies = ({cards=[1,2,3,4,5,6]}) => {
               <MoviesList cards={cards} />
 
               <div className={styles.paginationSection}>
-                <PaginationComp />
+                {/*<PaginationComp />*/}
               </div>
             </div> 
         }       

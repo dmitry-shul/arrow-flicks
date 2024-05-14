@@ -4,13 +4,11 @@ import styles from "./Movies.module.css"
 import Footer from '@/components/Footer/page'
 import FiltersSort from '@/components/FiltersSort/page'
 import MoviesList from '@/components/MoviesList/page'
-import Modal from '@/components/Modal/page'
 import PaginationComp from '@/components/PaginationComp/page'
 import { useFetching } from '@/hooks/useFetching'
 import LoaderComp from '@/components/LoaderComp/page'
 
 const Movies = () => {
-  const [visibleModal, setVisibleModal] = useState(false)
   const [page, setPage] = useState(1)
   const [movies, setMovies] = useState({})
   const [filters, setFilters] = useState({
@@ -58,12 +56,9 @@ const Movies = () => {
                 </div>
               </>
           }
-
-          
         </div>        
       </section>
       <Footer />
-      <Modal visible={visibleModal} setVisible={setVisibleModal} />
     </>
   )
 }

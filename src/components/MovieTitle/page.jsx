@@ -3,6 +3,7 @@ import React from 'react'
 import styles from "./MovieTitle.module.css"
 import RateStar from '../UI/RateStar'
 import { intToString } from '@/utils/intToString'
+import UserRatings from '../UserRatings/page'
 
 const MovieTitle = ({movie}) => {
   const {original_title, release_date, vote_average, vote_count} = movie
@@ -12,10 +13,7 @@ const MovieTitle = ({movie}) => {
     <div>
       <div className={styles.title}>
         <h4>{original_title}</h4>
-        <div className={styles.rate}>
-          <RateStar color={"9854F6"}/>
-          <span>9</span>
-        </div>
+        <UserRatings movie={movie} />
       </div>
 
       <div className={styles.year}>{release_date?.slice(0, 4)}</div>
