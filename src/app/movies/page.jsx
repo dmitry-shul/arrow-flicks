@@ -10,7 +10,7 @@ import LoaderComp from "@/components/LoaderComp/page";
 
 const Movies = () => {
   const [page, setPage] = useState(1);
-  const [movies, setMovies] = useState({results: ["ff", "dd", "ee", "yy"]});
+  const [movies, setMovies] = useState({results: []});
   const [filters, setFilters] = useState({
     genres: [],
     releaseYear: null,
@@ -29,7 +29,7 @@ const Movies = () => {
     });
 
   useEffect(() => {
-    //fetchMovies();
+    fetchMovies();
   }, [filters, page]);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const Movies = () => {
             style={{ marginTop: "41px", marginBottom: "24px" }}
           />
 
-          {/*!*/isMoviesLoaded ? (
+          {!isMoviesLoaded ? (
             <LoaderComp />
           ) : movies?.results?.length == 0 || moviesError !== "" ? (
             <div className={styles.notFoundMovies}>
