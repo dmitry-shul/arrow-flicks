@@ -74,4 +74,9 @@
     min-width: 300px;
     margin: 0 10px;
   }
+
+  .title {
+    display: flex;
+    justify-content: center;
+  }
 }

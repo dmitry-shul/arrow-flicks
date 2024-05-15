@@ -6,8 +6,6 @@ import YouTube from 'react-youtube';
 const DetailsSecondaryCard = ({details, ...props}) => {
   const {videos, overview, production_companies} = details
 
-  console.log(videos)
-
   return (
     <div {...props} className={styles.secondaryCard}>
       {

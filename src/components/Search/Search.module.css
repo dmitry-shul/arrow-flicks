@@ -55,3 +55,28 @@
 .btn button:active {
     background: #541F9D;
 }
+
+@media screen and (max-width: 670px) {
+    .search {
+        width: auto;
+        min-width: 300px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .search {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .btn {
+        width: 70px;
+    }
+    
+    .btn button {
+        width: 60px;
+    }
+}
