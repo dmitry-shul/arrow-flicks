@@ -28,3 +28,40 @@
 .header nav li:first-child {
   margin-bottom: 16px;
 }
+
+
+@media screen and (max-width: 1050px) {
+  .header {
+    width: 100%;
+    margin: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header nav {
+    margin-top: 0;
+  }
+
+  .header ul {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header nav a {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  
+  .header nav li:first-child {
+    margin-bottom: 0;
+    margin-right: 16px;
+  }
+}
+
+
+@media screen and (max-width: 460px) {
+  .logo span {
+    display: none;
+  }
+}

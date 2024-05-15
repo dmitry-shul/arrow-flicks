@@ -18,7 +18,7 @@ const MoviesList = ({movies, ...props}) => {
   });
 
   useEffect(() => {
-    fetchGenres()
+    //fetchGenres()
   }, [])
 
   return (

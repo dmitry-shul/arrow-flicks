@@ -4,7 +4,7 @@
   justify-content: flex-end;
   flex-grow: 1;
   min-width: 100px;
-  width: 138px;
+  max-width: 138px;
 }
 
 .label {

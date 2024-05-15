@@ -1,5 +1,6 @@
 .filtersSort {
   width: 100%;
+  margin: 42px 0 24px 0;
 }
 
 .filters {
@@ -13,6 +14,12 @@
   display: flex;
 }
 
+.rating { 
+  display: flex;
+  width: 284px;
+  justify-content: space-between;
+}
+
 .resetBtn {
   background: none;
   font-size: 14px;
@@ -22,6 +29,7 @@
   height: 42px;
   align-self: end;
   cursor: pointer;
+  margin-left: 16px;
 }
 
 .resetBtn:hover {
@@ -35,4 +43,69 @@
 .sort {
   display: flex;
   justify-content: flex-end;
+}
+
+.filters__openBtn {
+  display: none;
+}
+
+
+@media screen and (max-width: 800px) {
+  .filtersSort {
+    width: 100%;
+    overflow: hidden;
+    height: 60px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 24px 0;
+    transition: 0.8s;
+  }
+
+  .sort {
+    display: flex;
+    justify-content: center;
+  }
+
+  .filters {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ratingAndBtn {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rating { 
+    margin-top: 20px;
+  }
+
+  .resetBtn {
+    margin-top: 20px;
+    margin-left: 0;
+    width: 284px;
+  }
+
+  .filters__openBtn {
+    display: flex;
+    width: 284px;
+    height: 60px;
+    flex-shrink: 0;
+    background: rgb(233, 233, 233);
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #9854F6;
+    margin-top: 10px;
+  }
+
+  .filters__openBtn img {
+    width: 24px;
+    margin-left: 8px;
+  }
 }

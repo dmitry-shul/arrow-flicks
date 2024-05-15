@@ -9,7 +9,7 @@
 .wrapper {
   width: 980px;
   padding-top: 40px;
-  margin: 0 10px;
+  margin: 0 20px;
   position: relative;
 }
 
@@ -37,4 +37,41 @@
   margin-top: 16px;
   font-size: 20px;
   font-weight: 700;
+}
+
+
+@media screen and (max-width: 1050px) {
+  .content {
+    width: 100%;
+    min-height: calc(100vh - 60px - 138px);
+    margin-left: 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .paginationSection {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .notFoundMovies img {
+    width: 300px;
+  }
+  
+  .notFoundMovies p {
+    width: 300px;
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 460px) {
+  .wrapper {
+    min-width: 300px;
+    margin: 0 10px;
+  }
 }

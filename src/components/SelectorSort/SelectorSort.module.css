@@ -100,3 +100,12 @@
 .input:focus-within ~ .inputField {
   height: 0;
 }
+
+
+@media screen and (max-width: 800px) {
+  .root {
+    width: 284px;
+    max-width: 284px;
+    margin-bottom: 20px;
+  }
+}

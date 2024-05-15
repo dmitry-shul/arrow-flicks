@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setGenres } from "@/redux/features/genresSlice";
 
 const FiltersSort = ({filters, setFilters, ...props }) => {
+  const [openFilters, setOpenFilters] = useState(false)
   const [defaultFilters, setDefaultFilters] = useState(true)
   const genres = useAppSelector((state) => state.genre.genres)
   const dispatch = useAppDispatch()
@@ -20,7 +21,7 @@ const FiltersSort = ({filters, setFilters, ...props }) => {
   });
 
   useEffect(() => {
-    fetchGenres()
+    //fetchGenres()
   }, [])
 
   const resetFilters = () => {
@@ -48,7 +49,12 @@ const FiltersSort = ({filters, setFilters, ...props }) => {
   }
   
   return (
-    <div {...props} className={styles.filtersSort}>
+    <div {...props} className={styles.filtersSort} style={openFilters ? {height: "492px"} : {}}>
+      <div onClick={() => setOpenFilters(!openFilters)} className={styles.filters__openBtn}>
+        {openFilters ? "Close" : "Open"} filters
+        <img src="/assets/icons/arrow-down.svg" alt="arrow" style={openFilters ? {transform: "rotate(180deg)"} : {}} />
+      </div>
+
       <div className={styles.filters}>
         <MultiSelectComp
           genres={genres?.genres?.map(item => item.name)}
@@ -70,20 +76,22 @@ const FiltersSort = ({filters, setFilters, ...props }) => {
         />
 
         <div className={styles.ratingAndBtn}>
-          <InputRating
-            label="Ratings"
-            placeholder="From"
-            value={filters.ratingFrom}
-            setFilters={(e) => setFilters({ ...filters, ratingFrom: e })}
-          />
+          <div  className={styles.rating}>
+            <InputRating
+              label="Ratings"
+              placeholder="From"
+              value={filters.ratingFrom}
+              setFilters={(e) => setFilters({ ...filters, ratingFrom: e })}
+            />
 
-          <InputRating
-            label=""
-            placeholder="To"
-            style={{ margin: "0 16px 0 8px" }}
-            value={filters.ratingTo}
-            setFilters={(e) => setFilters({ ...filters, ratingTo: e })}
-          />
+            <InputRating
+              label=""
+              placeholder="To"
+              /*style={{ margin: "0 16px 0 8px" }}*/
+              value={filters.ratingTo}
+              setFilters={(e) => setFilters({ ...filters, ratingTo: e })}
+            />
+          </div>
 
           <button
             onClick={resetFilters}
