@@ -35,6 +35,10 @@ const Movies = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [page]);
+  
+  useEffect(() => {
+    setPage(1)
+  }, [filters]);
 
   return (
     <>

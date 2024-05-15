@@ -6,6 +6,12 @@
   max-width: 800px;
 }
 
+.trailer {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #D5D6DC;
+  margin-bottom: 20px;
+}
+
 .trailer h5,
 .description h5,
 .production h5 {
@@ -22,9 +28,8 @@
 }
 
 .description {
-  margin: 20px 0;
-  padding: 20px 0;
-  border-top: 1px solid #D5D6DC;
+  margin: 0 0 20px 0;
+  padding: 0 0 20px 0;
   border-bottom: 1px solid #D5D6DC;
 }
 

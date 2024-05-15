@@ -6,6 +6,7 @@ import Link from 'next/link'
 import DetailsMainCard from '@/components/DetailsMainCard/page'
 import DetailsSecondaryCard from '@/components/DetailsSecondaryCard/page'
 import { useFetching } from '@/hooks/useFetching'
+import LoaderComp from '@/components/LoaderComp/page'
 
 const Movie = () => {
   const params = useParams()
@@ -30,8 +31,14 @@ const Movie = () => {
           <p>{details.original_title}</p>
         </div>
 
-        <DetailsMainCard details={details} />
-        <DetailsSecondaryCard details={details} />
+        {
+          isDetailsLoaded
+          ? <>
+              <DetailsMainCard details={details} />
+              <DetailsSecondaryCard details={details} />
+            </>
+          : <LoaderComp />
+        }
 
         <div style={{height: "70px"}} />
       </div>        

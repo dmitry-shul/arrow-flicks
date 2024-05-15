@@ -13,9 +13,9 @@ const MovieCard = ({movie, ...props}) => {
   return (
     <div {...props} className={styles.card}>
       {
-        movie.poster_path === ""
+        movie.poster_path === null
         ? <img className={styles.poster} src="/assets/images/noPoster.png" alt="poster not found" />
-        : <img className={styles.poster} src={`/img/w200${poster_path}`} alt="poster" />
+        : <img className={styles.poster} src={`/img/w200/${poster_path}`} alt="poster" />
       }
 
       <div className={styles.moviesInfo}>

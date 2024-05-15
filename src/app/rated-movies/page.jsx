@@ -8,17 +8,28 @@ import Image from 'next/image'
 import Link from 'next/link'
 import LoaderComp from '@/components/LoaderComp/page'
 import { useAppSelector } from '@/redux/hooks'
+import { convertMoviesToArrays } from '@/utils/convertMoviesToArrays'
+import { Pagination } from '@mantine/core'
+import { useSearch } from '@/hooks/useSearch'
 
 const RatedMovies = () => {
+  const [searchValue, setSearchValue] = useState("")
+  const [page, setPage] = useState(1)
   const [movies, setMovies] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const mark = useAppSelector((state) => state.genre.mark)
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page]);
+
+  useEffect(() => {
     const rates = getRatesFromLocalStorage()
-    setMovies(rates.map(item => item.movie))
+    const movies = rates.map(item => item.movie)
+    const searchedMovies = useSearch(movies, searchValue)
+    setMovies(convertMoviesToArrays(searchedMovies))
     setIsLoading(false)
-  }, [mark])
+  }, [mark, searchValue])
 
   const getRatesFromLocalStorage = () => {
     if(localStorage.getItem('rates')) {
@@ -44,13 +55,26 @@ const RatedMovies = () => {
           : <div className={styles.wrapper}>
               <div className={styles.title}>
                 <h1>Rated movies</h1>
-                <Search className={styles.search} />
+                <Search 
+                  className={styles.search} 
+                  setSearchValue={setSearchValue}
+                />
               </div>
 
-              <MoviesList movies={movies} />
+              <MoviesList movies={movies[page-1]} />
 
               <div className={styles.paginationSection}>
-                {/*<PaginationComp page={} setPage={} totalPage={} />*/}
+                <Pagination 
+                  classNames={{
+                    dots: styles.dots,
+                  }}
+                  total={movies.length} 
+                  color="#9854F6" 
+                  value={page} 
+                  onChange={setPage} 
+                  siblings={1} 
+                  boundaries={0} 
+                />
               </div>
             </div> 
         }       
