@@ -21,23 +21,12 @@
 }
 
 .resetBtn {
-  background: none;
-  font-size: 14px;
-  font-weight: normal;
-  color: #9854F6;
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
   height: 42px;
   align-self: end;
-  cursor: pointer;
   margin-left: 16px;
-}
-
-.resetBtn:hover {
-  color: #BD93F7;
-}
-
-.resetBtn:active {
-  color: #541F9D;
 }
 
 .sort {

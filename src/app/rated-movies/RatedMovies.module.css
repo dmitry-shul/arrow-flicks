@@ -45,27 +45,6 @@
     margin: 16px 0;
 }
 
-.button {
-    height: 40px;
-    padding: 0 20px;
-    background: #9854F6;
-    border-radius: 8px;
-    color: white;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.button:hover {
-    background: #BD93F7;
-}
-
-.button:active {
-    background: #541F9D;
-}
-
 .dots {
   display: none;
 }
@@ -95,5 +74,18 @@
   .wrapper {
     width: 300px;
     margin: 0 10px;
+  }
+
+  .notFound {
+    width: 300px;
+  }
+
+  .notFound img {
+    width: 300px;
+    height: auto;
+  }
+
+  .notFound p {
+    font-size: 18px;
   }
 }

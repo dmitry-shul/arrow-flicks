@@ -7,6 +7,8 @@ import { CloseButton } from '@mantine/core'
 import RatingComp from '../RatingComp/page'
 import { useAppDispatch } from '@/redux/hooks'
 import { setMark } from '@/redux/features/genresSlice'
+import FillButton from '../FillButton/page'
+import UnFillButton from '../UnFillButton/page'
 
 const UserRatings = ({movie}) => {
   const dispatch = useAppDispatch()
@@ -64,6 +66,7 @@ const UserRatings = ({movie}) => {
         <RateStar color={rateLS ? "9854F6" : "D5D6DC"}/>
         <span>{rateLS?.rate}</span>
       </div>
+
       <Modal visible={visibleModal} setVisible={setVisibleModal}>
         <div className={styles.header}>
           <p>Your rating</p>
@@ -75,8 +78,8 @@ const UserRatings = ({movie}) => {
           <RatingComp myRate={myRate} setMyRate={setMyRate} />
 
           <div className={styles.buttons}>
-            <button onClick={saveRateToLocalStorage} className={styles.saveBtn}>Save</button>
-            <button onClick={removeRateFromLocalStorage} className={styles.removeBtn}>Remove rating</button>
+            <FillButton onClick={saveRateToLocalStorage}>Save</FillButton>
+            <UnFillButton onClick={removeRateFromLocalStorage}>Remove rating</UnFillButton>
           </div>
         </div>
       </Modal>

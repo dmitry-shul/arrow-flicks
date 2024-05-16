@@ -1,9 +1,24 @@
 .rating {
   display: flex;
   gap: 8px;
+  justify-content: space-between;
+  width: 352px;
 }
 
 .rating label {
   width: 28px;
   height: 28px;
+}
+
+
+@media screen and (max-width: 420px) {
+  .rating {
+    width: 100%;
+    gap: 0px;
+  }
+
+  .rating label {
+    width: 27px;
+    height: 27px;
+  }
 }

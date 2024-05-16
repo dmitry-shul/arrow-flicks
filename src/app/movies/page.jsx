@@ -10,7 +10,7 @@ import LoaderComp from "@/components/LoaderComp/page";
 
 const Movies = () => {
   const [page, setPage] = useState(1);
-  const [movies, setMovies] = useState({results: []});
+  const [movies, setMovies] = useState({ results: ["ss", "ee"] });
   const [filters, setFilters] = useState({
     genres: [],
     releaseYear: null,
@@ -29,15 +29,15 @@ const Movies = () => {
     });
 
   useEffect(() => {
-    fetchMovies();
+    //fetchMovies();
   }, [filters, page]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [page]);
-  
+
   useEffect(() => {
-    setPage(1)
+    setPage(1);
   }, [filters]);
 
   return (
@@ -52,7 +52,7 @@ const Movies = () => {
             style={{ marginTop: "41px", marginBottom: "24px" }}
           />
 
-          {!isMoviesLoaded ? (
+          {/*!*/isMoviesLoaded ? (
             <LoaderComp />
           ) : movies?.results?.length == 0 || moviesError !== "" ? (
             <div className={styles.notFoundMovies}>

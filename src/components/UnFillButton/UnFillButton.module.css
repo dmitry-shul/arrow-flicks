@@ -1,0 +1,14 @@
+.btn {
+  font-weight: 600;
+  color: #9854F6;
+  background: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: #BD93F7;
+}
+
+.btn:active {
+  color: #541F9D;
+}

@@ -50,35 +50,3 @@
   align-items: center;
   justify-content: space-between;
 }
-
-.saveBtn {
-  padding: 10px 20px;
-  border-radius: 8px;
-  background: #9854F6;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.saveBtn:hover {
-  background: #BD93F7;
-}
-
-.saveBtn:active {
-  background: #541F9D;
-}
-
-.removeBtn {
-  font-weight: 600;
-  color: #9854F6;
-  background: none;
-  cursor: pointer;
-}
-
-.removeBtn:hover {
-  color: #BD93F7;
-}
-
-.removeBtn:active {
-  color: #541F9D;
-}

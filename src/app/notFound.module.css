@@ -32,31 +32,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 20px;
 }
 
 .article p {
     font-size: 20px;
     font-weight: 700;
     margin: 48px 0 16px 0;
+    text-align: center;
+    line-height: 26px;
 }
 
-.button {
-    height: 40px;
-    padding: 0 20px;
-    background: #9854F6;
-    border-radius: 8px;
-    color: white;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+
+@media screen and (max-width: 800px) {
+    .article img {
+        width: 400px;
+        height: auto;
+    }
 }
 
-.button:hover {
-    background: #BD93F7;
-}
 
-.button:active {
-    background: #541F9D;
+@media screen and (max-width: 500px) {
+    .article img {
+        width: 280px;
+    }
 }
