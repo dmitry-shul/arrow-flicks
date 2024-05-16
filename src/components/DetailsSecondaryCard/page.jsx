@@ -6,6 +6,10 @@ import YouTube from 'react-youtube';
 const DetailsSecondaryCard = ({details, ...props}) => {
   const {videos, overview, production_companies} = details
 
+  if(videos.results.length === 0 && overview === "" && production_companies.length === 0) {
+    return null;
+  }
+
   return (
     <div {...props} className={styles.secondaryCard}>
       {
@@ -13,7 +17,7 @@ const DetailsSecondaryCard = ({details, ...props}) => {
         ? <div/>
         : <div className={styles.trailer}>
             <h5>Trailer</h5>
-            <YouTube videoId={videos?.results[0].key} title={videos?.results[0].name} />
+            <YouTube videoId={videos?.results[0].key} title={videos?.results[0].name} className={styles.YTVideo} />
           </div>
       }
 
@@ -23,7 +27,7 @@ const DetailsSecondaryCard = ({details, ...props}) => {
       </div>
       
       {
-        production_companies.length === 0
+        production_companies?.length === 0
         ? <div></div>
         :  <div className={styles.production}>
             <h5>Production</h5>

@@ -47,3 +47,22 @@
   margin-top: 12px;
   font-size: 16px;
 }
+
+
+@media screen and (max-width: 650px) {
+  .mainCard {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .poster {
+    width: auto;
+    height: 380px;
+    object-fit: contain;
+  }
+
+  .moviesInfo {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}

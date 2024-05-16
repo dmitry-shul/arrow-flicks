@@ -19,6 +19,10 @@
   font-weight: 700;
 }
 
+.YTVideo {
+  width: 500px;
+}
+
 .trailer iframe {
   width: 500px;
   height: 280px;
@@ -57,4 +61,27 @@
 
 .production p {
   margin-left: 8px;
+}
+
+
+@media screen and (max-width: 800px) {
+  .description p {
+    width: auto;
+  }
+
+  .description p {
+    text-align: justify;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .YTVideo {
+    width: 250px;
+  }
+  
+  .trailer iframe {
+    width: 250px;
+    height: auto;
+  }
 }

@@ -12,7 +12,7 @@ const DetailsMainCard = ({details}) => {
   return (
     <div className={styles.mainCard}>
       {
-        poster_path === ""
+        poster_path === null
         ? <img className={styles.poster} src="/assets/images/noPosterBig.png" alt="poster not found" />
         : <img className={styles.poster} src={`/img/w300/${poster_path}`} alt="poster" />
       }

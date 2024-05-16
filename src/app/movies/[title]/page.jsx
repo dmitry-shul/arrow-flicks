@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import styles from "./Movie.module.css";
-import { useParams } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 import Link from "next/link";
 import DetailsMainCard from "@/components/DetailsMainCard/page";
 import DetailsSecondaryCard from "@/components/DetailsSecondaryCard/page";
@@ -24,6 +24,10 @@ const Movie = () => {
   useEffect(() => {
     fetchDetails()
   }, []);
+
+  if(details.status_code === 34) {
+    notFound()
+  }
 
   return (
     <section className={styles.content}>

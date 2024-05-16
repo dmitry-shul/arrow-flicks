@@ -8,6 +8,7 @@ import PaginationComp from "@/components/PaginationComp/page";
 import { useFetching } from "@/hooks/useFetching";
 import LoaderComp from "@/components/LoaderComp/page";
 import Image from "next/image";
+import { validateRatingInputs } from "@/utils/validateRatingInputs";
 
 const Movies = () => {
   const [page, setPage] = useState(1);
@@ -30,7 +31,9 @@ const Movies = () => {
     });
 
   useEffect(() => {
-    fetchMovies();
+    if(validateRatingInputs(filters) === "") {
+      fetchMovies();
+    }
   }, [filters, page]);
 
   useEffect(() => {
