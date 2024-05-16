@@ -47,13 +47,7 @@ const RatedMovies = () => {
           <LoaderComp />
         ) : movies.length === 0 ? (
           <div className={styles.notFound}>
-            <Image
-              src="/assets/images/notFoundRatedMovies.png"
-              width={400}
-              height={300}
-              alt="Not found rated movies"
-              priority
-            />
+            <Image src="/assets/images/notFoundRatedMovies.png" width={400} height={300} alt="Not found rated movies" priority />
             <p>You haven't rated any films yet</p>
             <Link href="/movies">
               <FillButton>Find movies</FillButton>
@@ -63,10 +57,7 @@ const RatedMovies = () => {
           <div className={styles.wrapper}>
             <div className={styles.title}>
               <h1>Rated movies</h1>
-              <Search
-                className={styles.search}
-                setSearchValue={setSearchValue}
-              />
+              <Search className={styles.search} setSearchValue={setSearchValue} />
             </div>
 
             <MoviesList movies={movies[page - 1]} />

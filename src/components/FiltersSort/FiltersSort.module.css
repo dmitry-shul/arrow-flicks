@@ -12,12 +12,20 @@
 
 .ratingAndBtn {
   display: flex;
+  position: relative;
 }
 
 .rating { 
   display: flex;
   width: 284px;
   justify-content: space-between;
+}
+
+.rating_errorMassage p {
+  margin-top: 2px;
+  font-size: 16px;
+  position: absolute;
+  color: #e63f3f;
 }
 
 .resetBtn {
@@ -49,6 +57,7 @@
     align-items: center;
     margin: 24px 0;
     transition: 0.8s;
+    position: relative;
   }
 
   .sort {

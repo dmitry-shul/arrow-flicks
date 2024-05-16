@@ -60,6 +60,7 @@
 @media screen and (max-width: 510px) {
   .notFoundMovies img {
     width: 300px;
+    height: auto;
   }
   
   .notFoundMovies p {

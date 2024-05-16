@@ -12,9 +12,8 @@ const DetailsSecondaryCard = ({details, ...props}) => {
         videos?.results.length === 0
         ? <div/>
         : <div className={styles.trailer}>
-           <h5>Trailer</h5>
-          
-           <YouTube videoId={videos?.results[0].key} title={videos?.results[0].name} />
+            <h5>Trailer</h5>
+            <YouTube videoId={videos?.results[0].key} title={videos?.results[0].name} />
           </div>
       }
 

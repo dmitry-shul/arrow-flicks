@@ -34,3 +34,7 @@
 .input:focus-within {
   border: 1px solid #9854F6;
 }
+
+.input:invalid {
+  border: 1px solid #e63f3f;
+}

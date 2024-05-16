@@ -7,10 +7,11 @@ import MoviesList from "@/components/MoviesList/page";
 import PaginationComp from "@/components/PaginationComp/page";
 import { useFetching } from "@/hooks/useFetching";
 import LoaderComp from "@/components/LoaderComp/page";
+import Image from "next/image";
 
 const Movies = () => {
   const [page, setPage] = useState(1);
-  const [movies, setMovies] = useState({ results: ["ss", "ee"] });
+  const [movies, setMovies] = useState({ results: ["dff", "rgy"] });
   const [filters, setFilters] = useState({
     genres: [],
     releaseYear: null,
@@ -46,28 +47,20 @@ const Movies = () => {
         <div className={styles.wrapper}>
           <h1 className={styles.title}>Movies</h1>
 
-          <FiltersSort
-            filters={filters}
-            setFilters={setFilters}
-            style={{ marginTop: "41px", marginBottom: "24px" }}
-          />
+          <FiltersSort filters={filters} setFilters={setFilters} style={{ marginTop: "41px", marginBottom: "24px" }} />
 
           {/*!*/isMoviesLoaded ? (
             <LoaderComp />
           ) : movies?.results?.length == 0 || moviesError !== "" ? (
             <div className={styles.notFoundMovies}>
-              <img src="./assets/images/notFoundMovies.png" alt="Not found" />
+              <Image width={311} height={253} src="/assets/images/notFoundMovies.png" alt="Not found" />
               <p>We don't have such movies, look for another one</p>
             </div>
           ) : (
             <>
               <MoviesList movies={movies?.results} />
               <div className={styles.paginationSection}>
-                <PaginationComp
-                  page={page}
-                  setPage={setPage}
-                  totalPage={movies.total_pages}
-                />
+                <PaginationComp page={page} setPage={setPage} totalPage={movies.total_pages} />
               </div>
             </>
           )}

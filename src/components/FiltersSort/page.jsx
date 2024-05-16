@@ -8,8 +8,10 @@ import { useFetching } from "@/hooks/useFetching";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setGenres } from "@/redux/features/genresSlice";
 import UnFillButton from "../UnFillButton/page";
+import { validateRatingInputs } from "@/utils/validateRatingInputs";
 
 const FiltersSort = ({ filters, setFilters, ...props }) => {
+  const [ratingError, setRatingError] = useState("");
   const [openFilters, setOpenFilters] = useState(false);
   const [defaultFilters, setDefaultFilters] = useState(true);
   const genres = useAppSelector((state) => state.genre.genres);
@@ -37,6 +39,8 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
   };
 
   useEffect(() => {
+    setRatingError(validateRatingInputs(filters))
+
     filters.genres.length == 0 &&
     filters.releaseYear == null &&
     filters.ratingFrom.length == 0 &&
@@ -99,21 +103,24 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
         />
 
         <div className={styles.ratingAndBtn}>
-          <div className={styles.rating}>
-            <InputRating
-              label="Ratings"
-              placeholder="From"
-              value={filters.ratingFrom}
-              setFilters={(e) => setFilters({ ...filters, ratingFrom: e })}
-            />
+          <div className={styles.rating_errorMassage}>
+            <div className={styles.rating}>
+              <InputRating
+                label="Ratings"
+                placeholder="From"
+                value={filters.ratingFrom}
+                setFilters={(e) => setFilters({ ...filters, ratingFrom: e })}
+              />
 
-            <InputRating
-              label=""
-              placeholder="To"
-              /*style={{ margin: "0 16px 0 8px" }}*/
-              value={filters.ratingTo}
-              setFilters={(e) => setFilters({ ...filters, ratingTo: e })}
-            />
+              <InputRating
+                label=""
+                placeholder="To"
+                /*style={{ margin: "0 16px 0 8px" }}*/
+                value={filters.ratingTo}
+                setFilters={(e) => setFilters({ ...filters, ratingTo: e })}
+              />
+            </div>
+            <p>{ratingError}</p>
           </div>
 
           {/*<button
