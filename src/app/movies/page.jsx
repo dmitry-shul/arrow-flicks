@@ -11,7 +11,7 @@ import Image from "next/image";
 
 const Movies = () => {
   const [page, setPage] = useState(1);
-  const [movies, setMovies] = useState({ results: ["dff", "rgy"] });
+  const [movies, setMovies] = useState({});
   const [filters, setFilters] = useState({
     genres: [],
     releaseYear: null,
@@ -30,7 +30,7 @@ const Movies = () => {
     });
 
   useEffect(() => {
-    //fetchMovies();
+    fetchMovies();
   }, [filters, page]);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const Movies = () => {
 
           <FiltersSort filters={filters} setFilters={setFilters} style={{ marginTop: "41px", marginBottom: "24px" }} />
 
-          {/*!*/isMoviesLoaded ? (
+          {!isMoviesLoaded ? (
             <LoaderComp />
           ) : movies?.results?.length == 0 || moviesError !== "" ? (
             <div className={styles.notFoundMovies}>

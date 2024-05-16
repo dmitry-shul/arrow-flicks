@@ -22,7 +22,7 @@ const Movie = () => {
     });
 
   useEffect(() => {
-    //fetchDetails()
+    fetchDetails()
   }, []);
 
   return (

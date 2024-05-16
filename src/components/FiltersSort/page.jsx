@@ -25,7 +25,7 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
     });
 
   useEffect(() => {
-    //fetchGenres()
+    fetchGenres()
   }, []);
 
   const resetFilters = () => {
