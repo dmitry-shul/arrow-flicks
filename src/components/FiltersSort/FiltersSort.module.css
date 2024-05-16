@@ -44,6 +44,11 @@
 
 .filters__openBtn {
   display: none;
+  cursor: pointer;
+}
+
+.filters__openBtn:hover {
+  opacity: 0.8;
 }
 
 
