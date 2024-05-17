@@ -20,9 +20,6 @@ const RatedMovies = () => {
   const [isLoading, setIsLoading] = useState(true);
   const mark = useAppSelector((state) => state.genre.mark);
 
-  console.log("movies", movies)
-  console.log("T/F", movies.length === 0)
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [page]);
