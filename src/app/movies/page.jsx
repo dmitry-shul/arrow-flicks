@@ -21,6 +21,8 @@ const Movies = () => {
     sortBy: "popularity.desc",
   });
 
+  console.log("test")
+
   const [fetchMovies, isMoviesLoading, isMoviesLoaded, moviesError] =
     useFetching(async () => {
       await fetch(
