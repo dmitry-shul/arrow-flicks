@@ -48,7 +48,7 @@ const RatedMovies = () => {
       <section className={styles.content}>
         {isLoading ? (
           <LoaderComp />
-        ) : movies.length === 0 ? (
+        ) : movies[0].length === 0 ? (
           <div className={styles.notFound}>
             <Image src="/assets/images/notFoundRatedMovies.png" width={400} height={300} alt="Not found rated movies" priority />
             <p>You haven't rated any films yet</p>
