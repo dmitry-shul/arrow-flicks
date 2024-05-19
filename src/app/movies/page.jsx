@@ -31,9 +31,9 @@ const Movies = () => {
     });
 
   useEffect(() => {
-    fetchMovies();
-    /*if(validateRatingInputs(filters) === "") {
-    }*/
+    if(validateRatingInputs(filters) === "") {
+      fetchMovies();
+    }
   }, [filters, page]);
 
   useEffect(() => {

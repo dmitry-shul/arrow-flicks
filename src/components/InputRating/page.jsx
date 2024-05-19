@@ -5,6 +5,7 @@ import { Input } from '@mantine/core'
 import SVGSelector from '../UI/SVGSelector'
 
 const InputRating = ({label, placeholder, value, setFilters, ...props}) => {
+
   return (
     <Input.Wrapper 
       classNames={{
@@ -18,13 +19,15 @@ const InputRating = ({label, placeholder, value, setFilters, ...props}) => {
         classNames={{
           input: styles.input,
         }}
-        type='number'
+        /*type='number'*/
         placeholder={placeholder} 
         rightSection={<SVGSelector/>}
         value={value}
         onChange={(e) => setFilters(e.target.value)}
         min={0}
         max={10}
+        step="1"
+        pattern="[0-9]{0,2}"
       />
     </Input.Wrapper>
   )
