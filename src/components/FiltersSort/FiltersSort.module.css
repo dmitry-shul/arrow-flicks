@@ -66,7 +66,8 @@
   }
 
   .filtersSort_active {
-    height: 492px;
+    /*height: 492px;*/
+    height: auto;
   }
 
   .sort {
