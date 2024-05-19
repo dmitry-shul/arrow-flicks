@@ -64,8 +64,7 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
   return (
     <div
       {...props}
-      className={styles.filtersSort}
-      style={openFilters ? { height: "492px" } : {}}
+      className={openFilters ? [styles.filtersSort, styles.filtersSort_active].join(" ") : styles.filtersSort}
     >
       <div
         onClick={() => setOpenFilters(!openFilters)}

@@ -8,6 +8,8 @@ export const convertMoviesToArrays = (movies) => {
       arr = []
     }
   })
-  moviesArray.push(arr)
+  if(arr.length > 0){
+    moviesArray.push(arr)
+  }
   return moviesArray
 }

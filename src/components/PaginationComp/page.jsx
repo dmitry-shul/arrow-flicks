@@ -6,6 +6,22 @@ import { Pagination } from '@mantine/core';
 const PaginationComp = ({page, setPage, totalPage}) => {
   const totalPages = totalPage <= 500 ? totalPage : 500
 
+  if(totalPage < 3) {
+    return (
+      <Pagination
+        classNames={{
+          dots: styles.dots,
+        }}
+        total={totalPage}
+        color="#9854F6"
+        value={page}
+        onChange={setPage}
+        siblings={1}
+        boundaries={0}
+      />
+    )
+  }
+
   return (
     <div className={styles.pagination}>
       <button 

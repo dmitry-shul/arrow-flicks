@@ -45,7 +45,7 @@ const RatedMovies = () => {
       <section className={styles.content}>
         {isLoading ? (
           <LoaderComp />
-        ) : movies[0].length === 0 ? (
+        ) : movies[0]?.length === 0 ? (
           <div className={styles.notFound}>
             <Image src="/assets/images/notFoundRatedMovies.png" width={400} height={300} alt="Not found rated movies" priority />
             <p>You haven't rated any films yet</p>
@@ -59,22 +59,22 @@ const RatedMovies = () => {
               <h1>Rated movies</h1>
               <Search className={styles.search} setSearchValue={setSearchValue} />
             </div>
+            
+            {
+              movies[0] === undefined
+              ? <div className={styles.searchNotFound}>
+                  <Image src="/assets/images/notFoundRatedMovies.png" width={400} height={300} alt="Not found rated movies" priority />
+                  <div>Not found</div>
+                </div>
+              : <>
+                  <MoviesList movies={movies[page - 1]} />
 
-            <MoviesList movies={movies[page - 1]} />
-
-            <div className={styles.paginationSection}>
-              <Pagination
-                classNames={{
-                  dots: styles.dots,
-                }}
-                total={movies.length}
-                color="#9854F6"
-                value={page}
-                onChange={setPage}
-                siblings={1}
-                boundaries={0}
-              />
-            </div>
+                  <div className={styles.paginationSection}>
+                    <PaginationComp page={page} setPage={setPage} totalPage={movies.length} />
+                  </div>
+                </>
+            }
+            
           </div>
         )}
       </section>

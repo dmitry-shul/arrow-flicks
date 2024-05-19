@@ -49,6 +49,15 @@
   display: none;
 }
 
+.searchNotFound {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+}
+
 @media screen and (max-width: 1050px) {
   .content {
     width: 100%;
@@ -80,7 +89,8 @@
     width: 300px;
   }
 
-  .notFound img {
+  .notFound img,
+  .searchNotFound img {
     width: 300px;
     height: auto;
   }
