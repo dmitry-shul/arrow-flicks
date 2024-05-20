@@ -1,6 +1,5 @@
 .filtersSort {
   width: 100%;
-  margin: 42px 0 24px 0;
 }
 
 .filters {
@@ -34,7 +33,7 @@
   flex-shrink: 0;
   height: 42px;
   align-self: end;
-  margin-left: 16px;
+  margin-left: 10px;
 }
 
 .sort {
@@ -52,7 +51,7 @@
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 840px) {
   .filtersSort {
     width: 100%;
     overflow: hidden;

@@ -17,6 +17,7 @@
     border-radius: 8px;
     width: 380px;
     min-height: 208px;
+    margin-top: -42px;
   }
   
   .active {

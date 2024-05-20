@@ -70,7 +70,7 @@ const UserRatings = ({movie}) => {
       <Modal visible={visibleModal} setVisible={setVisibleModal}>
         <div className={styles.header}>
           <p>Your rating</p>
-          <CloseButton onClick={() => setVisibleModal(false)} />
+          <CloseButton style={{marginRight: "-10px"}} onClick={() => setVisibleModal(false)} />
         </div>
 
         <div className={styles.main}>

@@ -9,7 +9,6 @@ import Link from "next/link";
 import LoaderComp from "@/components/LoaderComp/page";
 import { useAppSelector } from "@/redux/hooks";
 import { convertMoviesToArrays } from "@/utils/convertMoviesToArrays";
-import { Pagination } from "@mantine/core";
 import { useSearch } from "@/hooks/useSearch";
 import FillButton from "@/components/FillButton/page";
 
@@ -39,6 +38,10 @@ const RatedMovies = () => {
     }
     return [];
   };
+
+  useEffect(() => {
+    movies[0] === undefined && localStorage.removeItem('rates');
+  }, [movies])
 
   return (
     <>

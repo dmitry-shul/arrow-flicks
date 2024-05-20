@@ -1,9 +1,9 @@
 .root {
-  /*width: 284px;*/
+  min-width: 282px;
+  max-width: 282px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  min-width: 150px;
 }
 
 .label {
@@ -109,6 +109,14 @@
 
 .input:focus-within ~ .inputField {
   height: 0;
+}
+
+
+@media screen and (max-width: 1400px) {
+  .root {
+    max-width: auto;
+    min-width: 150px;
+  }
 }
 
 

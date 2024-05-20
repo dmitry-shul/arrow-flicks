@@ -50,7 +50,7 @@ const Movies = () => {
         <div className={styles.wrapper}>
           <h1 className={styles.title}>Movies</h1>
 
-          <FiltersSort filters={filters} setFilters={setFilters} style={{ marginTop: "41px", marginBottom: "24px" }} />
+          <FiltersSort filters={filters} setFilters={setFilters} style={{ marginTop: "50px", marginBottom: "24px" }} />
 
           {!isMoviesLoaded ? (
             <LoaderComp />
