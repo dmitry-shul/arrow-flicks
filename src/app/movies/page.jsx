@@ -55,7 +55,7 @@ const Movies = () => {
             <LoaderComp />
           ) : movies?.results?.length == 0 || moviesError !== "" ? (
             <div className={styles.notFoundMovies}>
-              <Image width={311} height={253} src="/assets/images/notFoundMovies.png" alt="Not found" />
+              <Image width={311} height={253} src="/assets/images/notFoundMovies.png" alt="Not found" priority />
               <p>We don't have such movies, look for another one</p>
             </div>
           ) : (
