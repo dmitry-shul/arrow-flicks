@@ -18,7 +18,7 @@ const DetailsMainCard = ({details}) => {
       }
 
       <div className={styles.moviesInfo}>
-        <MovieTitle movie={{...details, genre_ids: details.genres.map(item => item.id)}} />
+        <MovieTitle movie={{...details, genre_ids: details?.genres?.map(item => item.id)}} />
 
         <div className={styles.additionalInfo}>
           <div className={styles.additionalInfo__titles}>

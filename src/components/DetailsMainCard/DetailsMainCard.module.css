@@ -10,6 +10,7 @@
 }
 
 .poster {
+  min-width: 250px;
   height: 352px;
 }
 
@@ -40,7 +41,7 @@
 .additionalInfo__values {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+  margin-left: 26px;
 }
 
 .additionalInfo__values span {

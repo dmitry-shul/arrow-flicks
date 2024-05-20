@@ -39,16 +39,12 @@ const RatedMovies = () => {
     return [];
   };
 
-  useEffect(() => {
-    movies[0] === undefined && localStorage.removeItem('rates');
-  }, [movies])
-
   return (
     <>
       <section className={styles.content}>
         {isLoading ? (
           <LoaderComp />
-        ) : movies[0]?.length === 0 ? (
+        ) : searchValue === "" && movies[0] === undefined ? (
           <div className={styles.notFound}>
             <Image src="/assets/images/notFoundRatedMovies.png" width={400} height={300} alt="Not found rated movies" priority />
             <p>You haven't rated any films yet</p>
@@ -64,7 +60,7 @@ const RatedMovies = () => {
             </div>
             
             {
-              movies[0] === undefined
+              searchValue !== "" && movies[0] === undefined
               ? <div className={styles.searchNotFound}>
                   <Image src="/assets/images/notFoundRatedMovies.png" width={400} height={300} alt="Not found rated movies" priority />
                   <div>Not found</div>

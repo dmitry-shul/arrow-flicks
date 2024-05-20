@@ -1,5 +1,5 @@
 .card {
-  /*max-width: 482px;*/
+  max-width: 482px;
   min-width: 482px;
   min-height: 218px;
   background: white;
@@ -37,6 +37,13 @@
 
 .genres span {
   max-width: 230px;
+}
+
+
+@media screen and (max-width: 1400px) {
+  .card {
+    max-width: none;
+  }
 }
 
 

@@ -6,7 +6,7 @@ import YouTube from 'react-youtube';
 const DetailsSecondaryCard = ({details, ...props}) => {
   const {videos, overview, production_companies} = details
 
-  if(videos.results.length === 0 && overview === "" && production_companies.length === 0) {
+  if(videos?.results.length === 0 && overview === "" && production_companies.length === 0) {
     return null;
   }
 
