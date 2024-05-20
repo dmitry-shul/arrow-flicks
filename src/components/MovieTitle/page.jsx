@@ -12,11 +12,12 @@ const MovieTitle = ({movie}) => {
   return (
     <div>
       <div className={styles.title}>
-        <h4>{original_title}</h4>
-        <UserRatings movie={movie} />
+        <div className={styles.title__column}>
+          <h4>{original_title}</h4>
+          <div className={styles.year}>{release_date?.slice(0, 4)}</div>
+        </div>
+        <UserRatings movie={movie} style={{marginTop: "-4px"}} />
       </div>
-
-      <div className={styles.year}>{release_date?.slice(0, 4)}</div>
 
       <div className={styles.rates}>
         <div className={styles.rate}>

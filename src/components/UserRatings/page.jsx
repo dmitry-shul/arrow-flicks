@@ -10,7 +10,7 @@ import { setMark } from '@/redux/features/genresSlice'
 import FillButton from '../FillButton/page'
 import UnFillButton from '../UnFillButton/page'
 
-const UserRatings = ({movie}) => {
+const UserRatings = ({movie, ...props}) => {
   const dispatch = useAppDispatch()
   const [visibleModal, setVisibleModal] = useState(false)
   const [rateLS, setRateLS] = useState({})
@@ -61,7 +61,7 @@ const UserRatings = ({movie}) => {
   }
 
   return (
-    <div onClick={(e) => openModal(e)}>
+    <div {...props} onClick={(e) => openModal(e)}>
       <div className={styles.rate}>
         <RateStar color={rateLS ? "9854F6" : "D5D6DC"}/>
         <span>{rateLS?.rate}</span>
