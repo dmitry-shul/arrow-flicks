@@ -12,14 +12,13 @@ const Movie = () => {
   const params = useParams();
   const [details, setDetails] = useState({});
 
-  const [fetchDetails, isDetailsLoading, isDetailsLoaded, detailsError] =
-    useFetching(async () => {
-      await fetch(
-        `/details/${params.title}?language=en-US&append_to_response=videos`,
-      )
-        .then((response) => response.json())
-        .then((response) => setDetails(response));
-    });
+  const [fetchDetails, isDetailsLoading, isDetailsLoaded, detailsError] = useFetching(async () => {
+    await fetch(
+      `/details/${params.title}?language=en-US&append_to_response=videos`,
+    )
+    .then((response) => response.json())
+    .then((response) => setDetails(response));
+  });
 
   useEffect(() => {
     fetchDetails()

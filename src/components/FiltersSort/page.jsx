@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { setGenres } from "@/redux/features/genresSlice";
 import UnFillButton from "../UnFillButton/page";
 import { validateRatingInputs } from "@/utils/validateRatingInputs";
+import { SORT_BY } from "@/utils/sortBy";
 
 const FiltersSort = ({ filters, setFilters, ...props }) => {
   const [ratingError, setRatingError] = useState("");
@@ -17,12 +18,11 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
   const genres = useAppSelector((state) => state.genre.genres);
   const dispatch = useAppDispatch();
 
-  const [fetchGenres, isGenresLoading, isGenresLoaded, genresError] =
-    useFetching(async () => {
-      await fetch("/genres")
-        .then((response) => response.json())
-        .then((response) => dispatch(setGenres(response)));
-    });
+  const [fetchGenres, isGenresLoading, isGenresLoaded, genresError] = useFetching(async () => {
+    await fetch("/genres")
+    .then((response) => response.json())
+    .then((response) => dispatch(setGenres(response)));
+  });
 
   useEffect(() => {
     fetchGenres()
@@ -40,7 +40,6 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
 
   useEffect(() => {
     setRatingError(validateRatingInputs(filters))
-
     filters.genres.length == 0 &&
     filters.releaseYear == null &&
     filters.ratingFrom.length == 0 &&
@@ -62,20 +61,10 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
   };
 
   return (
-    <div
-      {...props}
-      className={openFilters ? [styles.filtersSort, styles.filtersSort_active].join(" ") : styles.filtersSort}
-    >
-      <div
-        onClick={() => setOpenFilters(!openFilters)}
-        className={styles.filters__openBtn}
-      >
+    <div {...props} className={openFilters ? [styles.filtersSort, styles.filtersSort_active].join(" ") : styles.filtersSort} >
+      <div onClick={() => setOpenFilters(!openFilters)} className={styles.filters__openBtn} >
         {openFilters ? "Close" : "Open"} filters
-        <img
-          src="/assets/icons/arrow-down.svg"
-          alt="arrow"
-          style={openFilters ? { transform: "rotate(180deg)" } : {}}
-        />
+        <img src="/assets/icons/arrow-down.svg" alt="arrow" style={openFilters ? { transform: "rotate(180deg)" } : {}} />
       </div>
 
       <div className={styles.filters}>
@@ -114,7 +103,6 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
               <InputRating
                 label=""
                 placeholder="To"
-                /*style={{ margin: "0 16px 0 8px" }}*/
                 value={filters.ratingTo}
                 setFilters={(e) => setFilters({ ...filters, ratingTo: e })}
               />
@@ -122,23 +110,11 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
             <p>{ratingError}</p>
           </div>
 
-          {/*<button
-            onClick={resetFilters}
-            disabled={defaultFilters}
-            className={styles.resetBtn}
-            style={
-              defaultFilters ? { color: "#7B7C88", cursor: "default" } : {}
-            }
-          >
-            Reset filters
-          </button>*/}
           <div className={styles.resetBtn}>
             <UnFillButton
               onClick={resetFilters}
               disabled={defaultFilters}
-              style={
-                defaultFilters ? { color: "#7B7C88", cursor: "default" } : {}
-              }
+              style={ defaultFilters ? { color: "#7B7C88", cursor: "default" } : {} }
             >
               Reset filters
             </UnFillButton>
@@ -161,21 +137,3 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
 };
 
 export default FiltersSort;
-
-
-const SORT_BY = [
-  { title: "Most Popular", link: "popularity.desc" },
-  { title: "Least Popular", link: "popularity.asc" },
-  { title: "Original title desc", link: "original_title.desc" },
-  { title: "Original title asc", link: "original_title.asc" },
-  { title: "Most Rated", link: "vote_average.desc" },
-  { title: "Least Rated", link: "vote_average.asc" },
-  { title: "Release date desc", link: "primary_release_date.desc" },
-  { title: "Release date asc", link: "primary_release_date.asc" },
-  { title: "Most revenue", link: "revenue.desc" },
-  { title: "Least revenue", link: "revenue.asc" },
-  { title: "Most Voted", link: "vote_count.desc" },
-  { title: "Least Voted", link: "vote_count.asc" },
-  { title: "Title desc", link: "title.desc" },
-  { title: "Title asc", link: "title.asc" },
-];

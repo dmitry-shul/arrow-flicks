@@ -29,9 +29,8 @@ const DetailsSecondaryCard = ({details, ...props}) => {
       {
         production_companies?.length === 0
         ? <div></div>
-        :  <div className={styles.production}>
+        : <div className={styles.production}>
             <h5>Production</h5>
-
             {
               production_companies?.map(item => 
                 <div key={item.logo_path + item.name}>

@@ -11,12 +11,11 @@ const MoviesList = ({ movies, ...props }) => {
   const { push } = useRouter();
   const dispatch = useAppDispatch();
 
-  const [fetchGenres, isGenresLoading, isGenresLoaded, genresError] =
-    useFetching(async () => {
-      await fetch("/genres")
-        .then((response) => response.json())
-        .then((response) => dispatch(setGenres(response)));
-    });
+  const [fetchGenres, isGenresLoading, isGenresLoaded, genresError] = useFetching(async () => {
+    await fetch("/genres")
+    .then((response) => response.json())
+    .then((response) => dispatch(setGenres(response)));
+  });
 
   useEffect(() => {
     fetchGenres()

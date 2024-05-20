@@ -12,11 +12,11 @@ const Search = ({setSearchValue, ...props}) => {
   
   return (
     <div {...props} className={styles.search}>
-        <Image src="./assets/icons/search.svg" width={16} height={16} alt=""  />
-        <input value={value} onChange={(e) => setValue(e.target.value)} type="text" placeholder="Search movie title" />
-        <div className={styles.btn}>
-            <button onClick={setSearch}>Search</button>
-        </div>
+      <Image src="./assets/icons/search.svg" width={16} height={16} alt=""  />
+      <input value={value} onChange={(e) => setValue(e.target.value)} type="text" placeholder="Search movie title" />
+      <div className={styles.btn}>
+          <button onClick={setSearch}>Search</button>
+      </div>
     </div>
   )
 }

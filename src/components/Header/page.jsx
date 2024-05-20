@@ -9,12 +9,6 @@ const Header = () => {
   return (
     <header className={styles.header}>
         <Link href="/movies" className={styles.logo}>
-          {/*<img 
-            src="./assets/icons/favicon.svg"
-            width={32}
-            height={32}
-            alt="Logo"
-          />*/}
           <Logo />
           <span>ArrowFlicks</span>
         </Link>

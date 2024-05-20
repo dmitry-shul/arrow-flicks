@@ -1,0 +1,16 @@
+export const SORT_BY = [
+    { title: "Most Popular", link: "popularity.desc" },
+    { title: "Least Popular", link: "popularity.asc" },
+    { title: "Original title desc", link: "original_title.desc" },
+    { title: "Original title asc", link: "original_title.asc" },
+    { title: "Most Rated", link: "vote_average.desc" },
+    { title: "Least Rated", link: "vote_average.asc" },
+    { title: "Release date desc", link: "primary_release_date.desc" },
+    { title: "Release date asc", link: "primary_release_date.asc" },
+    { title: "Most revenue", link: "revenue.desc" },
+    { title: "Least revenue", link: "revenue.asc" },
+    { title: "Most Voted", link: "vote_count.desc" },
+    { title: "Least Voted", link: "vote_count.asc" },
+    { title: "Title desc", link: "title.desc" },
+    { title: "Title asc", link: "title.asc" },
+  ];

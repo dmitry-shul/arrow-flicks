@@ -21,14 +21,13 @@ const Movies = () => {
     sortBy: "popularity.desc",
   });
 
-  const [fetchMovies, isMoviesLoading, isMoviesLoaded, moviesError] =
-    useFetching(async () => {
-      await fetch(
-        `/movie?language=en-US&page=${page}&sort_by=${filters.sortBy}&with_genres=${filters.genres.map((item) => item.id).join("%2C")}&primary_release_year=${filters.releaseYear}&vote_average.lte=${filters.ratingTo}&vote_average.gte=${filters.ratingFrom}`,
-      )
-        .then((response) => response.json())
-        .then((response) => setMovies(response));
-    });
+  const [fetchMovies, isMoviesLoading, isMoviesLoaded, moviesError] = useFetching(async () => {
+    await fetch(
+      `/movie?language=en-US&page=${page}&sort_by=${filters.sortBy}&with_genres=${filters.genres.map((item) => item.id).join("%2C")}&primary_release_year=${filters.releaseYear}&vote_average.lte=${filters.ratingTo}&vote_average.gte=${filters.ratingFrom}`,
+    )
+    .then((response) => response.json())
+    .then((response) => setMovies(response));
+  });
 
   useEffect(() => {
     if(validateRatingInputs(filters) === "") {
@@ -67,6 +66,7 @@ const Movies = () => {
               </div>
             </>
           )}
+
         </div>
       </section>
       <Footer />

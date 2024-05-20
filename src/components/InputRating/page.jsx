@@ -8,18 +8,17 @@ const InputRating = ({label, placeholder, value, setFilters, ...props}) => {
 
   return (
     <Input.Wrapper 
+      {...props}
       classNames={{
         root: styles.root,
         label: styles.label,
       }}
       label={label} 
-      {...props}
     >
       <Input 
         classNames={{
           input: styles.input,
         }}
-        /*type='number'*/
         placeholder={placeholder} 
         rightSection={<SVGSelector/>}
         value={value}

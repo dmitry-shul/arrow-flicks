@@ -17,10 +17,8 @@ const MovieCard = ({movie, ...props}) => {
         ? <img className={styles.poster} src="/assets/images/noPoster.png" alt="poster not found" />
         : <img className={styles.poster} src={`/img/w200/${poster_path}`} alt="poster" />
       }
-
       <div className={styles.moviesInfo}>
         <MovieTitle movie={movie} />
-
         <div className={styles.genres}>
           <p>Genres</p>
           <span>{genresList}</span>

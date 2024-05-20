@@ -13,7 +13,6 @@ const Modal = ({children, visible, setVisible, ...props}) => {
     <div 
       {...props} 
       className={styleClasses.join(" ")} 
-      //onClick={() => setVisible(false)}
     >
       <div 
         className={props.classModal ? props.classModal : styles.content} 

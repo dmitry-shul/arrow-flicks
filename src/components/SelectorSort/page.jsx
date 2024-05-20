@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import styles from "./SelectorSort.module.css"
 import { Select } from '@mantine/core'
 
@@ -7,6 +7,7 @@ const SelectorSort = ({data, label, placeholder, defaultValue, value, setFilters
 
   return (
     <Select
+      {...props}
       classNames={{
         root: styles.root,
         wrapper: styles.wrapper,
@@ -33,7 +34,6 @@ const SelectorSort = ({data, label, placeholder, defaultValue, value, setFilters
       comboboxProps={{ middlewares: { shift: false }, offset: 8, transitionProps: { transition: 'pop', duration: 200 } }}
       defaultValue={defaultValue}
       allowDeselect={allowDeselect}
-      {...props}
     />
   )
 }

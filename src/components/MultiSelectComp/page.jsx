@@ -7,6 +7,7 @@ const MultiSelectComp = ({genres, label, placeholder, value, setFilters, ...prop
 
   return (
     <MultiSelect
+      {...props}
       classNames={{
         root: styles.root,
         wrapper: styles.wrapper,
@@ -31,7 +32,6 @@ const MultiSelectComp = ({genres, label, placeholder, value, setFilters, ...prop
       styles={{ dropdown: { maxHeight: 188, overflowY: 'auto' } }}
       checkIconPosition="none"
       comboboxProps={{ middlewares: { shift: false }, offset: 8, transitionProps: { transition: 'pop', duration: 200 } }}
-      {...props}
     />
   )
 }
