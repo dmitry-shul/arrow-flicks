@@ -35,6 +35,12 @@
   border: 1px solid #9854F6;
 }
 
-.input:invalid {
+.input:invalid,
+.input__invalid {
+  border: 1px solid #e63f3f;
+}
+
+.input__invalid:hover,
+.input__invalid:focus-within {
   border: 1px solid #e63f3f;
 }

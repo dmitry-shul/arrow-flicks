@@ -98,6 +98,7 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
                 placeholder="From"
                 value={filters.ratingFrom}
                 setFilters={(e) => setFilters({ ...filters, ratingFrom: e })}
+                ratingError={ratingError}
               />
 
               <InputRating
@@ -105,6 +106,7 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
                 placeholder="To"
                 value={filters.ratingTo}
                 setFilters={(e) => setFilters({ ...filters, ratingTo: e })}
+                ratingError={ratingError}
               />
             </div>
             <p>{ratingError}</p>
