@@ -9,7 +9,7 @@ export const validateRatingInputs = (filters) => {
     errorMassage = "Available values from 0 to 10";
   }
 
-  if(filters.ratingFrom.includes(",") || filters.ratingFrom.includes(".") || filters.ratingTo.includes(",") || filters.ratingTo.includes(",")) {
+  if(filters.ratingFrom?.includes(",") || filters.ratingFrom?.includes(".") || filters.ratingTo?.includes(",") || filters.ratingTo?.includes(",")) {
     errorMassage = 'Only integers available';
   }
 

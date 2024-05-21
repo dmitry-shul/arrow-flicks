@@ -8,7 +8,7 @@ const ActiveLink = ({children, href, ...props}) => {
   const pathname = usePathname()
 
   return (
-    <Link {...props} className={pathname.includes(href) ? styles.activeLink : styles.link} href={href}>{children}</Link>
+    <Link {...props} className={pathname?.includes(href) ? styles.activeLink : styles.link} href={href}>{children}</Link>
   )
 }
 

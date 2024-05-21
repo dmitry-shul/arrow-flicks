@@ -50,7 +50,7 @@ const FiltersSort = ({ filters, setFilters, ...props }) => {
 
   const setSelectedGenres = (e) => {
     const selectedGenres = genres?.genres.filter((item) =>
-      e.includes(item.name),
+      e?.includes(item.name),
     );
     setFilters({ ...filters, genres: selectedGenres });
   };
