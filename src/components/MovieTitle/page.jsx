@@ -22,9 +22,9 @@ const MovieTitle = ({movie}) => {
       <div className={styles.rates}>
         <div className={styles.rate}>
           <RateStar color="FAB005"/>
-          <span>{vote_average?.toFixed(1)}</span>
+          <span>{vote_average ? vote_average?.toFixed(1) : "0.0"}</span>
         </div>
-        <p>({voteCount})</p>
+        <p>({vote_count ? voteCount : "0"})</p>
       </div>
     </div>
   )
